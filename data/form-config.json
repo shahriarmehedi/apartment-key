@@ -1,0 +1,279 @@
+{
+  "steps": [
+    {
+      "id": "name",
+      "title": "Let's get started! What's your <span class='text-brand-coral'>name</span>?",
+      "type": "form",
+      "fields": [
+        {
+          "field": "firstName",
+          "type": "text",
+          "label": "First Name",
+          "placeholder": "First Name",
+          "required": true
+        },
+        {
+          "field": "lastName",
+          "type": "text",
+          "label": "Last Name",
+          "placeholder": "Last Name",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "email",
+      "title": "What's your <span class='text-brand-coral'>email</span> address?",
+      "type": "form",
+      "fields": [
+        {
+          "field": "email",
+          "type": "email",
+          "label": "Email Address",
+          "placeholder": "youremail@example.com",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "phone",
+      "title": "What's your <span class='text-brand-coral'>phone</span> number?",
+      "type": "form",
+      "fields": [
+        {
+          "field": "phone",
+          "type": "tel",
+          "label": "Phone Number",
+          "placeholder": "(000) 000-0000",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "bedrooms",
+      "title": "How many <span class='text-brand-coral'>bedrooms</span> do you need?",
+      "type": "selection",
+      "field": "bedrooms",
+      "required": true,
+      "options": [
+        {
+          "id": "studio",
+          "label": "Studio",
+          "value": "studio",
+          "abbreviation": "S"
+        },
+        {
+          "id": "1bed",
+          "label": "1 Bedroom",
+          "value": "1",
+          "abbreviation": "1"
+        },
+        {
+          "id": "2beds",
+          "label": "2 Bedrooms",
+          "value": "2",
+          "abbreviation": "2"
+        },
+        {
+          "id": "3plus",
+          "label": "3+ Bedrooms",
+          "value": "3+",
+          "abbreviation": "3+"
+        }
+      ]
+    },
+    {
+      "id": "bathrooms",
+      "title": "How many <span class='text-brand-coral'>bathrooms</span> do you need?",
+      "type": "list-selection",
+      "field": "bathrooms",
+      "required": true,
+      "options": [
+        {
+          "id": "1bath",
+          "label": "1 Bath",
+          "value": "1"
+        },
+        {
+          "id": "2bath",
+          "label": "2 Bath",
+          "value": "2"
+        },
+        {
+          "id": "3plus",
+          "label": "3+ Bathrooms",
+          "value": "3+"
+        }
+      ]
+    },
+    {
+      "id": "budget",
+      "title": "What's your <span class='text-brand-coral'>budget</span>?",
+      "type": "slider",
+      "field": "maxBudget",
+      "required": true,
+      "min": 500,
+      "max": 5000,
+      "step": 100,
+      "default": 1500,
+      "format": "currency"
+    },
+    {
+      "id": "income",
+      "title": "What's your monthly <span class='text-brand-coral'>income</span>?",
+      "type": "income",
+      "field": "monthlyIncome",
+      "required": true,
+      "min": 1000,
+      "max": 20000,
+      "step": 500,
+      "default": 4000,
+      "format": "currency",
+      "extraQuestion": {
+        "label": "Additional occupants over 18?",
+        "field": "additionalOccupants",
+        "type": "select",
+        "options": ["None", "1 person", "2 people", "3+ people"]
+      }
+    },
+    {
+      "id": "location",
+      "title": "Where would you like to <span class='text-brand-coral'>live</span>?",
+      "type": "selection",
+      "field": "location",
+      "required": true,
+      "options": [
+        {
+          "id": "hou",
+          "label": "Houston",
+          "value": "houston",
+          "abbreviation": "HOU"
+        },
+        {
+          "id": "dfw",
+          "label": "Dallas / Fort Worth",
+          "value": "dallas-fort-worth",
+          "abbreviation": "DFW"
+        },
+        {
+          "id": "atx",
+          "label": "Austin",
+          "value": "austin",
+          "abbreviation": "ATX"
+        }
+      ]
+    },
+    {
+      "id": "timeframe",
+      "title": "When do you want to move in? <span class='text-brand-coral'>(Timeframe)</span>",
+      "type": "date",
+      "field": "moveInDate",
+      "required": true,
+      "placeholder": "MM/DD/YYYY"
+    },
+    {
+      "id": "rentalHistory",
+      "title": "Tell us about your <span class='text-brand-coral'>rental history</span>",
+      "type": "multi-selection-single",
+      "field": "rentalHistory",
+      "required": true,
+      "multiple": true,
+      "options": [
+        {
+          "id": "na",
+          "label": "N/A",
+          "value": "na"
+        },
+        {
+          "id": "eviction",
+          "label": "Evictions",
+          "value": "eviction"
+        },
+        {
+          "id": "broken-lease",
+          "label": "Broken Lease",
+          "value": "broken-lease"
+        },
+        {
+          "id": "felony",
+          "label": "Felony",
+          "value": "felony"
+        }
+      ]
+    },
+    {
+      "id": "pets",
+      "title": "Do you have any <span class='text-brand-coral'>pets</span>?",
+      "type": "list-selection",
+      "field": "pets",
+      "required": true,
+      "options": [
+        {
+          "id": "na",
+          "label": "N/A",
+          "value": "na"
+        },
+        {
+          "id": "cat",
+          "label": "Cat",
+          "value": "cat"
+        },
+        {
+          "id": "dog",
+          "label": "Dog",
+          "value": "dog"
+        }
+      ]
+    },
+    {
+      "id": "referral",
+      "title": "How did you <span class='text-brand-coral'>hear about us</span>?",
+      "type": "form",
+      "fields": [
+        {
+          "field": "referralSource",
+          "type": "select",
+          "label": "Referral Source",
+          "placeholder": "Select one...",
+          "required": true,
+          "options": [
+            "Google Search",
+            "Instagram",
+            "Facebook",
+            "TikTok",
+            "Friend Referral",
+            "Apartment Locator",
+            "Other"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "additionalInfo",
+      "title": "Any <span class='text-brand-coral'>additional information</span> or requests?",
+      "type": "form",
+      "fields": [
+        {
+          "field": "additionalInfo",
+          "type": "textarea",
+          "label": "Additional Information or Requests",
+          "placeholder": "Wood Floors, Floor to Ceiling Windows, Bathtub, Dog Friendly, Walkable, Pet-friendly, Gym, Pool, etc...",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "submit",
+      "title": "Review & <span class='text-brand-coral'>Submit</span>",
+      "type": "review"
+    }
+  ],
+  "footer": {
+    "termsText": "By submitting this form, you agree to Fancy Apartments",
+    "termsLink": "/terms",
+    "termsLinkText": "Terms of Service",
+    "privacyLink": "/privacy",
+    "privacyLinkText": "Privacy Policy",
+    "consentText": "and to be contacted by us or third parties. By providing your phone number, you give us your express written consent to deliver automated text messages to you at the phone number provided, for which you can opt-out any time. Consent is not a condition of purchase."
+  }
+}

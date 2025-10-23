@@ -1,0 +1,130 @@
+'use client'
+
+import React from 'react'
+import { motion } from 'framer-motion'
+import { DollarSign, Users, Home } from 'lucide-react'
+import Image from 'next/image'
+
+export const FreeService: React.FC = () => {
+    return (
+        <section id="free-service" className="py-24 bg-white overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    {/* Left - Image */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="relative"
+                    >
+                        <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+                            <Image
+                                src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop"
+                                alt="Happy renters in their new apartment"
+                                width={800}
+                                height={600}
+                                className="w-full h-full object-cover"
+                            />
+
+                            {/* Floating Badge */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.3 }}
+                                className="absolute top-4 sm:top-6 left-4 sm:left-6 bg-white rounded-2xl px-3 sm:px-4 py-2 sm:py-3 shadow-xl"
+                            >
+                                <div className="flex items-center space-x-2">
+                                    <span className="text-xl sm:text-2xl">💰</span>
+                                    <span className="font-bold text-gray-900 text-sm sm:text-base">$0 Cost to Renters</span>
+                                </div>
+                            </motion.div>
+
+                            {/* Bottom Badge */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.5 }}
+                                className="absolute bottom-4 sm:bottom-6 right-4 sm:right-6 bg-gradient-to-r from-brand-coral to-brand-cyan rounded-2xl px-4 sm:px-6 py-2 sm:py-3 shadow-xl"
+                            >
+                                <span className="font-bold text-white text-base sm:text-lg">Always Free!</span>
+                            </motion.div>
+
+                            {/* Decorative Dots */}
+                            <div className="absolute -bottom-8 -right-8 w-32 h-32 grid grid-cols-6 gap-2 opacity-30">
+                                {[...Array(36)].map((_, i) => (
+                                    <div key={i} className="w-2 h-2 rounded-full bg-brand-coral"></div>
+                                ))}
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* Right - Content */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="space-y-6 lg:pl-8"
+                    >
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                                Save Money.{' '}
+                                <span className="bg-gradient-to-r from-brand-coral to-brand-cyan bg-clip-text text-transparent">
+                                    Save Time.
+                                </span>
+                            </h2>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            className="space-y-4 text-gray-600"
+                        >
+                            <p className="text-base sm:text-lg leading-relaxed">
+                                <span className="font-semibold text-gray-700">Why pay for apartment hunting when you can get expert help for free?</span>
+                            </p>
+                            <p className="text-base sm:text-lg leading-relaxed">
+                                Property managers compensate us when you lease through our service, meaning professional assistance costs you nothing.
+                            </p>
+                        </motion.div>
+
+                        <div className="space-y-4 pt-4">
+                            {[
+                                { icon: Users, text: 'Renters get free professional apartment search assistance.' },
+                                { icon: Home, text: 'Property owners fill vacancies with qualified tenants we connect them with.' },
+                                { icon: DollarSign, text: 'We receive compensation from properties for successful placements!' }
+                            ].map((item, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, x: 20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: 0.3 + index * 0.15 }}
+                                    whileHover={{ x: 10 }}
+                                    className="flex items-start space-x-3 cursor-pointer"
+                                >
+                                    <div className="flex-shrink-0 mt-1">
+                                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-coral/10 to-brand-cyan/10 flex items-center justify-center">
+                                            <item.icon className="w-5 h-5 text-brand-coral" strokeWidth={2.5} />
+                                        </div>
+                                    </div>
+                                    <p className="text-gray-900 font-medium flex-1 leading-relaxed">{item.text}</p>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.div>
+                </div>
+            </div>
+        </section>
+    )
+}
