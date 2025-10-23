@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { KeyRound, Menu, X } from 'lucide-react'
+import Link from 'next/link'
 import { Button } from './ui/button'
 
 export const Header: React.FC = () => {
@@ -51,12 +52,7 @@ export const Header: React.FC = () => {
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center space-x-6">
-                        <button
-                            onClick={() => scrollToSection('why-choose')}
-                            className="text-gray-600 hover:text-brand-cyan transition-colors text-sm font-medium"
-                        >
-                            Why Choose Us
-                        </button>
+
                         <button
                             onClick={() => scrollToSection('how-it-works')}
                             className="text-gray-600 hover:text-brand-cyan transition-colors text-sm font-medium"
@@ -75,12 +71,12 @@ export const Header: React.FC = () => {
                         >
                             Reviews
                         </button>
-                        <Button
-                            onClick={() => scrollToSection('cta')}
-                            className="bg-gradient-to-r from-brand-coral to-brand-coral hover:from-brand-coral/90 hover:to-brand-coral/90 text-white text-sm px-5 py-2 shadow-md shadow-brand-coral/20"
+                        <Link
+                            href="/get-started"
+                            className="inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-brand-coral to-brand-coral hover:from-brand-coral/90 hover:to-brand-coral/90 text-white text-sm px-5 py-2 shadow-md shadow-brand-coral/20"
                         >
                             Get Started
-                        </Button>
+                        </Link>
                     </nav>
 
                     {/* Mobile Menu Button */}
@@ -101,12 +97,7 @@ export const Header: React.FC = () => {
                         className="md:hidden pb-4 border-t border-gray-200 pt-4"
                     >
                         <nav className="flex flex-col space-y-3">
-                            <button
-                                onClick={() => scrollToSection('why-choose')}
-                                className="text-gray-600 hover:text-brand-cyan transition-colors text-sm font-medium text-left"
-                            >
-                                Why Choose Us
-                            </button>
+
                             <button
                                 onClick={() => scrollToSection('how-it-works')}
                                 className="text-gray-600 hover:text-brand-cyan transition-colors text-sm font-medium text-left"
@@ -125,12 +116,12 @@ export const Header: React.FC = () => {
                             >
                                 Reviews
                             </button>
-                            <Button
-                                onClick={() => scrollToSection('cta')}
-                                className="bg-gradient-to-r from-brand-coral to-brand-coral hover:from-brand-coral/90 hover:to-brand-coral/90 text-white text-sm w-full shadow-md shadow-brand-coral/20"
+                            <Link
+                                href="/get-started"
+                                className="w-full inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-brand-coral to-brand-coral hover:from-brand-coral/90 hover:to-brand-coral/90 text-white text-sm px-5 py-2 shadow-md shadow-brand-coral/20"
                             >
                                 Get Started
-                            </Button>
+                            </Link>
                         </nav>
                     </motion.div>
                 )}

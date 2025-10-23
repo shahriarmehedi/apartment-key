@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Button } from './ui/button'
+import Link from 'next/link'
 import { Sparkles, ArrowRight } from 'lucide-react'
 import { AuroraText } from './ui/aurora-text'
 import { IconCloud } from './ui/icon-cloud'
@@ -87,14 +88,13 @@ export const Hero: React.FC = () => {
                             transition={{ duration: 0.6, delay: 0.6 }}
                             className="flex flex-col sm:flex-row items-center lg:justify-start justify-center gap-4 mb-12"
                         >
-                            <Button
-                                size="lg"
-                                onClick={scrollToCTA}
-                                className="group bg-gradient-to-r from-brand-coral to-brand-coral hover:from-brand-coral/90 hover:to-brand-coral/90 text-white shadow-lg shadow-brand-coral/25"
+                            <Link
+                                href="/get-started"
+                                className="group inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-brand-coral to-brand-coral hover:from-brand-coral/90 hover:to-brand-coral/90 text-white px-6 py-4 shadow-lg shadow-brand-coral/25 text-lg"
                             >
                                 Get Started
                                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </Button>
+                            </Link>
                         </motion.div>
                     </div>
 

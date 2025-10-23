@@ -75,14 +75,15 @@ export const CTA: React.FC = () => {
                     transition={{ duration: 0.5, delay: 0.3 }}
                     className="flex flex-col items-center space-y-4"
                 >
-                    <Link href="/get-started">
-                        <Button
-                            className="bg-gradient-to-r from-brand-coral to-brand-cyan hover:from-brand-coral/90 hover:to-brand-cyan/90 text-white px-10 py-6 group text-lg font-semibold shadow-2xl shadow-brand-coral/20 rounded-2xl"
-                        >
-                            Get Started
-                            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </Button>
+                    {/* Use a styled Link (anchor) instead of nesting a <button> inside an <a> */}
+                    <Link
+                        href="/get-started"
+                        className="inline-flex items-center justify-center bg-gradient-to-r from-brand-coral to-brand-cyan hover:from-brand-coral/90 hover:to-brand-cyan/90 text-white px-10 py-6 group text-lg font-semibold shadow-2xl shadow-brand-coral/20 rounded-2xl"
+                    >
+                        Get Started
+                        <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
+
                     <p className="text-gray-500 text-sm">
                         Get matched with top apartments today
                     </p>

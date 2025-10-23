@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Button } from './ui/button'
+import Link from 'next/link'
 import { Search, ThumbsUp, Key, ArrowRight } from 'lucide-react'
 import { TextAnimate } from './ui/text-animate'
 
@@ -106,10 +107,13 @@ export const HowItWorks: React.FC = () => {
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="text-center"
                 >
-                    <Button onClick={scrollToCTA} className="bg-gradient-to-r from-brand-coral to-brand-coral hover:from-brand-coral/90 hover:to-brand-coral/90 text-white px-8 py-3 group shadow-lg shadow-brand-coral/25">
+                    <Link
+                        href="/get-started"
+                        className="inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-brand-coral to-brand-coral hover:from-brand-coral/90 hover:to-brand-coral/90 text-white px-8 py-3 group shadow-lg shadow-brand-coral/25"
+                    >
                         Get Started
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                    </Link>
                 </motion.div>
             </div>
         </section>
