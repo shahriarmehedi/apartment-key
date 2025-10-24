@@ -37,8 +37,8 @@ export const Footer: React.FC = () => {
                             </div>
                             <div className="flex items-start space-x-2">
                                 <Mail className="w-4 h-4 text-brand-cyan flex-shrink-0 mt-0.5" />
-                                <a href="mailto:admin@apartmetnkey.com" className="text-gray-400 hover:text-brand-orange transition-colors">
-                                    admin@apartmetnkey.com
+                                <a href="mailto:admin@apartmentkey.com" className="text-gray-400 hover:text-brand-orange transition-colors">
+                                    admin@apartmentkey.com
                                 </a>
                             </div>
                             <div className="flex items-start space-x-2">
