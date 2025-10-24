@@ -7,8 +7,15 @@ import Image from 'next/image'
 
 export const FreeService: React.FC = () => {
     return (
-        <section id="free-service" className="py-24 bg-white overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="free-service" className="py-24 relative overflow-hidden">
+            {/* Enhanced Background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50/30 to-white" />
+
+            {/* Decorative gradient orbs */}
+            <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-gradient-to-r from-brand-orange/15 to-transparent rounded-full blur-3xl transform -translate-y-1/2" />
+            <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-gradient-to-l from-brand-cyan/15 to-transparent rounded-full blur-3xl" />
+
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left - Image */}
                     <motion.div
@@ -47,13 +54,13 @@ export const FreeService: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: 0.5 }}
-                                className="absolute bottom-4 sm:bottom-6 right-4 sm:right-6 bg-gradient-to-r from-brand-coral to-brand-cyan rounded-2xl px-4 sm:px-6 py-2 sm:py-3 shadow-xl"
+                                className="absolute bottom-4 sm:bottom-6 right-4 sm:right-6 bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan rounded-2xl px-4 sm:px-6 py-2 sm:py-3 shadow-xl"
                             >
                                 <span className="font-bold text-white text-base sm:text-lg">Always Free!</span>
                             </motion.div>
 
                             {/* Decorative Dots */}
-                            <div className="absolute -bottom-8 -right-8 w-32 h-32 grid grid-cols-6 gap-2 opacity-30">
+                            <div className="absolute -bottom-8 -right-8 w-32 h-32 grid grid-cols-6 gap-2 opacity-20">
                                 {[...Array(36)].map((_, i) => (
                                     <div key={i} className="w-2 h-2 rounded-full bg-brand-coral"></div>
                                 ))}
@@ -76,9 +83,9 @@ export const FreeService: React.FC = () => {
                             transition={{ duration: 0.6 }}
                         >
                             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-                                Save Money.{' '}
-                                <span className="bg-gradient-to-r from-brand-coral to-brand-cyan bg-clip-text text-transparent">
-                                    Save Time.
+                                Save Time.{' '}
+                                <span className="bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan bg-clip-text text-transparent">
+                                    Save Money.
                                 </span>
                             </h2>
                         </motion.div>
@@ -100,7 +107,7 @@ export const FreeService: React.FC = () => {
 
                         <div className="space-y-4 pt-4">
                             {[
-                                { icon: Users, text: 'Renters get free professional apartment search assistance.' },
+                                { icon: Users, text: 'Renters get free professional apartment search.' },
                                 { icon: Home, text: 'Property owners fill vacancies with qualified tenants we connect them with.' },
                                 { icon: DollarSign, text: 'We receive compensation from properties for successful placements!' }
                             ].map((item, index) => (
@@ -114,8 +121,8 @@ export const FreeService: React.FC = () => {
                                     className="flex items-start space-x-3 cursor-pointer"
                                 >
                                     <div className="flex-shrink-0 mt-1">
-                                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-coral/10 to-brand-cyan/10 flex items-center justify-center">
-                                            <item.icon className="w-5 h-5 text-brand-coral" strokeWidth={2.5} />
+                                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange/15 via-brand-pink/10 to-brand-cyan/15 flex items-center justify-center">
+                                            <item.icon className="w-5 h-5 text-brand-orange" strokeWidth={2.5} />
                                         </div>
                                     </div>
                                     <p className="text-gray-900 font-medium flex-1 leading-relaxed">{item.text}</p>

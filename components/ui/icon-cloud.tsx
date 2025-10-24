@@ -15,13 +15,14 @@ interface Icon {
 interface IconCloudProps {
   icons?: React.ReactNode[]
   images?: string[]
+  textItems?: string[]
 }
 
 function easeOutCubic(t: number): number {
   return 1 - Math.pow(1 - t, 3)
 }
 
-export function IconCloud({ icons, images }: IconCloudProps) {
+export function IconCloud({ icons, images, textItems }: IconCloudProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [iconPositions, setIconPositions] = useState<Icon[]>([])
   const [rotation, setRotation] = useState({ x: 0, y: 0 })
@@ -42,25 +43,67 @@ export function IconCloud({ icons, images }: IconCloudProps) {
   const iconCanvasesRef = useRef<HTMLCanvasElement[]>([])
   const imagesLoadedRef = useRef<boolean[]>([])
 
-  // Create icon canvases once when icons/images change
+  // Create icon canvases once when icons/images/textItems change
   useEffect(() => {
-    if (!icons && !images) return
+    if (!icons && !images && !textItems) return
 
-    const items = icons || images || []
-    imagesLoadedRef.current = new Array(items.length).fill(false)
+    // Combine images and textItems into a single array
+    const combinedItems: Array<{ type: 'icon' | 'image' | 'text', content: any }> = []
 
-    const newIconCanvases = items.map((item, index) => {
+    if (icons) {
+      icons.forEach(icon => combinedItems.push({ type: 'icon', content: icon }))
+    }
+    if (images) {
+      images.forEach(img => combinedItems.push({ type: 'image', content: img }))
+    }
+    if (textItems) {
+      textItems.forEach(text => combinedItems.push({ type: 'text', content: text }))
+    }
+
+    imagesLoadedRef.current = new Array(combinedItems.length).fill(false)
+
+    const newIconCanvases = combinedItems.map((item, index) => {
       const offscreen = document.createElement("canvas")
       offscreen.width = 80
       offscreen.height = 80
       const offCtx = offscreen.getContext("2d")
 
       if (offCtx) {
-        if (images) {
+        if (item.type === 'text') {
+          // Handle text items - create gradient bubbles with city names
+          offCtx.clearRect(0, 0, offscreen.width, offscreen.height)
+
+          // Create gradient
+          const gradient = offCtx.createLinearGradient(0, 0, 80, 80)
+          gradient.addColorStop(0, '#FF8C42')  // Bold orange
+          gradient.addColorStop(0.5, '#FFB6D9') // Pink accent
+          gradient.addColorStop(1, '#00D4FF')  // Bright cyan
+
+          // Draw circle
+          offCtx.beginPath()
+          offCtx.arc(40, 40, 38, 0, Math.PI * 2)
+          offCtx.fillStyle = gradient
+          offCtx.fill()
+
+          // Add border
+          offCtx.strokeStyle = 'rgba(255, 255, 255, 0.3)'
+          offCtx.lineWidth = 2
+          offCtx.stroke()
+
+          // Draw text
+          const text = item.content as string
+          offCtx.fillStyle = 'white'
+          offCtx.textAlign = 'center'
+          offCtx.textBaseline = 'middle'
+          offCtx.font = 'bold 13px sans-serif'
+          offCtx.fillText(text, 40, 40)
+
+          imagesLoadedRef.current[index] = true
+        } else if (item.type === 'image') {
           // Handle image URLs directly
           const img = new Image()
           img.crossOrigin = "anonymous"
-          img.src = items[index] as string
+          img.src = item.content as string
           img.onload = () => {
             offCtx.clearRect(0, 0, offscreen.width, offscreen.height)
 
@@ -78,7 +121,7 @@ export function IconCloud({ icons, images }: IconCloudProps) {
         } else {
           // Handle SVG icons
           offCtx.scale(0.4, 0.4)
-          const svgString = renderToString(item as React.ReactElement)
+          const svgString = renderToString(item.content as React.ReactElement)
           const img = new Image()
           img.src = "data:image/svg+xml;base64," + btoa(svgString)
           img.onload = () => {
@@ -92,13 +135,14 @@ export function IconCloud({ icons, images }: IconCloudProps) {
     })
 
     iconCanvasesRef.current = newIconCanvases
-  }, [icons, images])
+  }, [icons, images, textItems])
 
   // Generate initial icon positions on a sphere
   useEffect(() => {
-    const items = icons || images || []
+    // Count total items
+    const totalItems = (icons?.length || 0) + (images?.length || 0) + (textItems?.length || 0)
     const newIcons: Icon[] = []
-    const numIcons = items.length || 20
+    const numIcons = totalItems || 20
 
     // Fibonacci sphere parameters
     const offset = 2 / numIcons
@@ -122,7 +166,7 @@ export function IconCloud({ icons, images }: IconCloudProps) {
       })
     }
     setIconPositions(newIcons)
-  }, [icons, images])
+  }, [icons, images, textItems])
 
   // Handle mouse events
   const handleMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
@@ -269,8 +313,8 @@ export function IconCloud({ icons, images }: IconCloudProps) {
         ctx.scale(scale, scale)
         ctx.globalAlpha = opacity
 
-        if (icons || images) {
-          // Only try to render icons/images if they exist
+        if (icons || images || textItems) {
+          // Only try to render icons/images/text if they exist
           if (
             iconCanvasesRef.current[index] &&
             imagesLoadedRef.current[index]
@@ -302,13 +346,13 @@ export function IconCloud({ icons, images }: IconCloudProps) {
         cancelAnimationFrame(animationFrameRef.current)
       }
     }
-  }, [icons, images, iconPositions, isDragging, mousePos, targetRotation])
+  }, [icons, images, textItems, iconPositions, isDragging, mousePos, targetRotation])
 
   return (
     <canvas
       ref={canvasRef}
-      width={600}
-      height={600}
+      width={700}
+      height={700}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}

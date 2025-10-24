@@ -76,7 +76,7 @@ export const Neighborhoods: React.FC = () => {
                             className="bg-white border border-gray-200 rounded-lg p-5 hover:border-gray-300 transition-colors"
                         >
                             <div className="flex items-start space-x-3">
-                                <div className="p-4 rounded-2xl bg-gradient-to-br from-brand-coral to-brand-cyan shadow-lg shadow-brand-coral/20 flex-shrink-0">
+                                <div className="p-4 rounded-2xl bg-gradient-to-br from-brand-orange via-brand-pink to-brand-cyan shadow-lg shadow-brand-orange/20 flex-shrink-0">
                                     <neighborhood.icon className="w-7 h-7 text-white" />
                                 </div>
                                 <div>

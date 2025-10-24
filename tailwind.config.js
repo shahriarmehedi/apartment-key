@@ -10,20 +10,10 @@ module.exports = {
         extend: {
             colors: {
                 brand: {
-                    coral: '#FF9E6D',
-                    cyan: '#22D3EE',
-                    orange: {
-                        50: '#fff7ed',
-                        100: '#ffedd5',
-                        200: '#fed7aa',
-                        300: '#fdba74',
-                        400: '#fb923c',
-                        500: '#FF9E6D',
-                        600: '#ea580c',
-                        700: '#c2410c',
-                        800: '#9a3412',
-                        900: '#7c2d12',
-                    },
+                    orange: '#FF8C42',     // Bold orange from logo
+                    cyan: '#00D4FF',       // Bright cyan/blue from logo
+                    pink: '#FFB6D9',       // Soft pink accent from logo
+                    coral: '#FF8C42',      // Alias for orange
                 },
                 primary: {
                     '50': '#f0f9ff',

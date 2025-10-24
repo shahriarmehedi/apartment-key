@@ -11,11 +11,11 @@ const features = [
         description: 'No hidden fees. Ever.',
     },
     {
-        title: 'Real People, Real Help',
-        description: "You&apos;ll talk to a human who listens.",
+        title: "We're Ready to Help!",
+        description: "Schedule a call or Text us",
     },
     {
-        title: 'Verified Listings Only',
+        title: 'Real-time accurate availability',
         description: 'No fake ads or old posts.',
     },
     {
@@ -23,15 +23,22 @@ const features = [
         description: 'Curated list that matches your lifestyle & budget.',
     },
     {
-        title: 'Trusted Locators',
-        description: '11+ Years Experience — Houston born and raised.',
+        title: '11+ Years Experienced Locators',
+        description: 'Houston born and raised.',
     },
 ]
 
 export const NeighborhoodsNew: React.FC = () => {
     return (
-        <section id="neighborhoods" className="py-24 bg-gray-50 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="neighborhoods" className="py-24 relative overflow-hidden">
+            {/* Enhanced Background */}
+            <div className="absolute inset-0 bg-gradient-to-bl from-gray-50 via-white to-gray-50" />
+
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-gradient-to-bl from-brand-cyan/15 to-transparent rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-gradient-to-tr from-brand-orange/15 to-transparent rounded-full blur-3xl" />
+
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left - Content */}
                     <motion.div
@@ -49,7 +56,7 @@ export const NeighborhoodsNew: React.FC = () => {
                         >
                             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
                                 Why Choose{' '}
-                                <span className="bg-gradient-to-r from-brand-coral to-brand-cyan bg-clip-text text-transparent block mt-2">
+                                <span className="bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan bg-clip-text text-transparent block mt-2">
                                     Apartment Key
                                 </span>
                             </h2>
@@ -70,7 +77,7 @@ export const NeighborhoodsNew: React.FC = () => {
                                     className="flex items-start space-x-3 bg-white rounded-xl p-4 shadow-sm hover:shadow-lg transition-shadow cursor-pointer"
                                 >
                                     <div className="flex-shrink-0">
-                                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-coral to-brand-cyan flex items-center justify-center shadow-md">
+                                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange via-brand-pink to-brand-cyan flex items-center justify-center shadow-md">
                                             <Check className="w-5 h-5 text-white" strokeWidth={2.5} />
                                         </div>
                                     </div>
@@ -124,15 +131,15 @@ export const NeighborhoodsNew: React.FC = () => {
                             >
                                 <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
                                     <div>
-                                        <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-brand-coral to-brand-cyan bg-clip-text text-transparent">11+</div>
+                                        <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan bg-clip-text text-transparent">11+</div>
                                         <div className="text-[10px] sm:text-xs text-gray-600 mt-0.5">Years Exp</div>
                                     </div>
                                     <div>
-                                        <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-brand-coral to-brand-cyan bg-clip-text text-transparent">100%</div>
+                                        <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan bg-clip-text text-transparent">100%</div>
                                         <div className="text-[10px] sm:text-xs text-gray-600 mt-0.5">Free</div>
                                     </div>
                                     <div>
-                                        <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-brand-coral to-brand-cyan bg-clip-text text-transparent">1000+</div>
+                                        <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan bg-clip-text text-transparent">1000+</div>
                                         <div className="text-[10px] sm:text-xs text-gray-600 mt-0.5">Happy</div>
                                     </div>
                                 </div>

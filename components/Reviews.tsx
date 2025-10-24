@@ -60,6 +60,19 @@ const ReviewCard = ({
     username: string
     img: string
 }) => {
+    // Replace "Apartment Key" with styled version
+    const formattedText = text.split('Apartment Key').map((part, index, array) => {
+        if (index < array.length - 1) {
+            return (
+                <React.Fragment key={index}>
+                    {part}
+                    <span className="font-bold text-brand-coral">Apartment Key</span>
+                </React.Fragment>
+            )
+        }
+        return part
+    })
+
     return (
         <figure
             className={cn(
@@ -77,7 +90,7 @@ const ReviewCard = ({
                 </div>
             </div>
             <blockquote className="text-sm text-gray-600 leading-relaxed">
-                {text}
+                {formattedText}
             </blockquote>
         </figure>
     )
@@ -85,8 +98,15 @@ const ReviewCard = ({
 
 export const Reviews: React.FC = () => {
     return (
-        <section id="reviews" className="py-24 bg-gradient-to-b from-white to-gray-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="reviews" className="py-24 relative overflow-hidden">
+            {/* Enhanced gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/50 to-white" />
+
+            {/* Decorative background elements */}
+            <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-gradient-to-br from-brand-orange/15 to-transparent rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-gradient-to-tl from-brand-cyan/15 to-transparent rounded-full blur-3xl" />
+
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -95,20 +115,12 @@ export const Reviews: React.FC = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <TextAnimate
-                        animation="blurInUp"
-                        by="word"
-                        className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3"
-                    >
+                    <h2 className="text-3xl sm:text-4xl font-bold mb-3 bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan bg-clip-text text-transparent pb-2">
                         What Renters Are Saying
-                    </TextAnimate>
-                    <TextAnimate
-                        animation="slideUp"
-                        by="word"
-                        className="text-gray-600"
-                    >
-                        Real reviews from happy Houston residents
-                    </TextAnimate>
+                    </h2>
+                    <p className="text-gray-600 text-base sm:text-lg">
+                        Real Reviews from Happy Apartment Shoppers
+                    </p>
                 </motion.div>
 
                 {/* Reviews Marquee */}
@@ -136,7 +148,7 @@ export const Reviews: React.FC = () => {
                     className="text-center"
                 >
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Join the growing community of happy Houston residents who found their home through <span className="font-semibold text-gray-900">Apartment Key</span>
+                        Join the growing community of happy Houston residents who found their home through <span className="font-bold pl-1 text-brand-coral"> Apartment Key</span>
                     </p>
                 </motion.div>
             </div>

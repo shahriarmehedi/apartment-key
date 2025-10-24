@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 
 import React, { useState, useEffect } from 'react'
@@ -42,12 +43,13 @@ export const Header: React.FC = () => {
                         className="flex items-center space-x-2 cursor-pointer"
                         onClick={() => scrollToSection('hero')}
                     >
-                        <div className="bg-gray-900 p-2 rounded-lg">
+                        {/* <div className="bg-gray-900 p-2 rounded-lg">
                             <KeyRound className="w-5 h-5 text-white" />
                         </div>
                         <span className="text-xl font-bold text-gray-900">
                             Apartment Key
-                        </span>
+                        </span> */}
+                        <img src="/Final.png" alt="Apartment Key" className=" h-12" />
                     </motion.div>
 
                     {/* Desktop Navigation */}

@@ -68,11 +68,11 @@ export const WhyChoose: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white border border-gray-200 rounded-xl p-6 hover:border-brand-coral/50 transition-all hover:shadow-lg"
+                            className="bg-white border border-gray-200 rounded-xl p-6 hover:border-brand-orange/50 transition-all hover:shadow-lg"
                         >
                             <div className="flex flex-col items-start space-y-3">
-                                <div className="bg-gradient-to-br from-brand-coral/10 to-brand-cyan/10 p-2.5 rounded-lg">
-                                    <feature.icon className="w-5 h-5 text-brand-coral" />
+                                <div className="bg-gradient-to-br from-brand-orange/15 via-brand-pink/10 to-brand-cyan/15 p-2.5 rounded-lg">
+                                    <feature.icon className="w-5 h-5 text-brand-orange" />
                                 </div>
                                 <h3 className="text-lg font-semibold text-gray-900">
                                     {feature.title}

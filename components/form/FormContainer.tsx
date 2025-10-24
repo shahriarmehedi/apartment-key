@@ -196,7 +196,7 @@ export function FormContainer({ children, title, stepConfig, footer, onSubmit }:
             <div className="bg-white border-b border-gray-200">
                 <div className="max-w-4xl mx-auto px-6 py-4">
                     <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-medium text-brand-coral">
+                        <span className="text-sm font-medium text-brand-orange">
                             Step {currentStep + 1} of {totalSteps}
                         </span>
                         <span className="text-sm text-gray-500">
@@ -205,7 +205,7 @@ export function FormContainer({ children, title, stepConfig, footer, onSubmit }:
                     </div>
                     <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                         <motion.div
-                            className="h-full bg-gradient-to-r from-brand-coral to-brand-cyan"
+                            className="h-full bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan"
                             initial={{ width: 0 }}
                             animate={{ width: `${((currentStep + 1) / totalSteps) * 100}%` }}
                             transition={{ duration: 0.3 }}
@@ -265,7 +265,7 @@ export function FormContainer({ children, title, stepConfig, footer, onSubmit }:
                             onClick={handleNext}
                             className="
                 flex items-center gap-2 px-8 py-3 rounded-lg font-medium
-                bg-gradient-to-r from-brand-coral to-brand-cyan
+                bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan
                 text-white shadow-lg hover:shadow-xl
                 transition-all hover:scale-105
               "
@@ -281,11 +281,11 @@ export function FormContainer({ children, title, stepConfig, footer, onSubmit }:
                     <div className="max-w-4xl mx-auto px-6">
                         <p className="text-xs text-gray-500 text-center leading-relaxed">
                             {footer.termsText}{' '}
-                            <a href={footer.termsLink} className="text-brand-coral hover:underline">
+                            <a href={footer.termsLink} className="text-brand-orange hover:underline">
                                 {footer.termsLinkText}
                             </a>
                             {' & '}
-                            <a href={footer.privacyLink} className="text-brand-coral hover:underline">
+                            <a href={footer.privacyLink} className="text-brand-orange hover:underline">
                                 {footer.privacyLinkText}
                             </a>
                             {' '}

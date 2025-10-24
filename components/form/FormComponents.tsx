@@ -28,11 +28,11 @@ export function SelectionCard({ id, label, abbreviation, selected, onClick }: Se
             <div className="flex flex-col items-center gap-4">
                 <div className={`
           w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold
-          ${selected ? 'bg-brand-coral/10 text-brand-coral' : 'bg-gray-100 text-gray-400'}
+          ${selected ? 'bg-brand-orange/15 text-brand-orange' : 'bg-gray-100 text-gray-400'}
         `}>
                     {abbreviation}
                 </div>
-                <div className={`text-lg font-medium ${selected ? 'text-brand-coral' : 'text-gray-700'}`}>
+                <div className={`text-lg font-medium ${selected ? 'text-brand-orange' : 'text-gray-700'}`}>
                     {label}
                 </div>
             </div>
@@ -56,7 +56,7 @@ export function ListSelectionCard({ id, label, selected, onClick }: ListSelectio
             className={`
         w-full p-6 rounded-xl border-2 transition-all duration-300 text-center
         ${selected
-                    ? 'border-brand-cyan bg-brand-cyan/5 text-brand-coral font-medium'
+                    ? 'border-brand-cyan bg-brand-cyan/5 text-brand-orange font-medium'
                     : 'border-gray-200 bg-white hover:border-gray-300 text-gray-700'
                 }
       `}
@@ -121,8 +121,8 @@ export function Slider({ value, min, max, step, onChange, format = 'number' }: S
     return (
         <div className="w-full max-w-2xl mx-auto">
             <div className="mb-8 text-center">
-                <div className="inline-block px-6 py-2 bg-brand-coral/10 rounded-full">
-                    <span className="text-2xl font-bold text-brand-coral">{formatValue(value)}</span>
+                <div className="inline-block px-6 py-2 bg-brand-orange/15 rounded-full">
+                    <span className="text-2xl font-bold text-brand-orange">{formatValue(value)}</span>
                 </div>
             </div>
             <input
