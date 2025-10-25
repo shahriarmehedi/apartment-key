@@ -8,16 +8,7 @@ import { Sparkles, ArrowRight } from 'lucide-react'
 import { AuroraText } from './ui/aurora-text'
 import { IconCloud } from './ui/icon-cloud'
 
-const apartmentImages = [
-    'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=200&h=200&fit=crop',
-    'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=200&h=200&fit=crop',
-    'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=200&h=200&fit=crop',
-    'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=200&h=200&fit=crop',
-    'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=200&h=200&fit=crop',
-    'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=200&h=200&fit=crop',
-    'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=200&h=200&fit=crop',
-    'https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=200&h=200&fit=crop',
-]
+const apartmentImages: string[] = []
 
 const cityNames = [
     'Houston',
@@ -28,6 +19,13 @@ const cityNames = [
     'Woodlands',
     'Katy',
     'Sugarland',
+    'Conroe',
+    'Med Center',
+    'Downtown',
+    'Stafford',
+    'Montgomery',
+    'Tomball',
+    'Galveston',
 ]
 
 export const Hero: React.FC = () => {
@@ -147,12 +145,12 @@ export const Hero: React.FC = () => {
                             transition={{ duration: 0.6, delay: 0.2 }}
                             className="text-4xl sm:text-5xl lg:text-6xl text-gray-700 font-bold leading-tight tracking-tight"
                         >
-                            Find Your Perfect{' '}
+                            Unlock Your Perfect Place with{' '}
                             <AuroraText
                                 className="text-4xl sm:text-5xl lg:text-6xl font-bold"
-                                colors={["#FF8C42", "#00D4FF", "#FFB6D9", "#00D4FF"]}
+                                colors={["#00D4FF", "#FFB6D9", "#00D4FF"]}
                             >
-                                Houston Apartment
+                                APARTMENT KEY
                             </AuroraText>
                         </motion.h1>
 
@@ -163,7 +161,7 @@ export const Hero: React.FC = () => {
                             transition={{ duration: 0.6, delay: 0.4 }}
                             className="text-base sm:text-lg text-gray-600 leading-relaxed"
                         >
-                            Fast, free, and stress-free apartment search. We handle everything from finding listings to scheduling tours.
+                            A fast and stress free way to find your next apartment.
                         </motion.p>
 
                         {/* CTA Buttons */}

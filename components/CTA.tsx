@@ -57,7 +57,7 @@ export const CTA: React.FC = () => {
                     {/* <div className="p-5 rounded-3xl bg-gray-50 border border-gray-100">
                         <KeyRound className="w-12 h-12 text-brand-coral" strokeWidth={1.5} />
                     </div> */}
-                    <img src="/Final.png" alt="Key Icon" className=" h-16" />
+                    <img src="/logo.png" alt="Key Icon" className=" h-16" />
                 </motion.div>
 
                 {/* Title */}

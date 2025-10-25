@@ -23,8 +23,8 @@ const steps = [
     {
         number: '03',
         icon: Key,
-        title: 'You Tour, Choose & Move In',
-        description: 'We schedule tours, connect you with leasing agents, and make it effortless.',
+        title: 'You Tour, Choose and Unlock!',
+        description: 'We schedule tours and connect you with your top apartment matches.',
     },
 ]
 

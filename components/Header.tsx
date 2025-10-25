@@ -49,7 +49,7 @@ export const Header: React.FC = () => {
                         <span className="text-xl font-bold text-gray-900">
                             Apartment Key
                         </span> */}
-                        <img src="/Final.png" alt="Apartment Key" className=" h-12" />
+                        <img src="/logo.png" alt="Apartment Key" className=" h-12" />
                     </motion.div>
 
                     {/* Desktop Navigation */}

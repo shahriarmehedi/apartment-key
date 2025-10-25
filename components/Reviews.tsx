@@ -9,40 +9,40 @@ import { TextAnimate } from './ui/text-animate'
 
 const reviews = [
     {
+        text: "Brandon was excellent! He was able to get me a great move-in special. Will use again!",
+        name: 'Tammy N.',
+        username: '@tammyn',
+        img: 'https://avatar.vercel.sh/tammyn',
+    },
+    {
+        text: "Found me a home walking distance from my Job. Great work!",
+        name: 'Henry H.',
+        username: '@henryh',
+        img: 'https://avatar.vercel.sh/henryh',
+    },
+    {
+        text: "Thank you to the awesome staff. This is my first apartment and I'm new to the city; I was referred by a friend and loved the easy and process.",
+        name: 'Sophie K.',
+        username: '@sophiek',
+        img: 'https://avatar.vercel.sh/sophiek',
+    },
+    {
+        text: "6 weeks Free, 22nd floor! Loving my new place!",
+        name: 'Caleb A.',
+        username: '@caleba',
+        img: 'https://avatar.vercel.sh/caleba',
+    },
+    {
+        text: "Shout out to Brandon, received a 2 month look and lease special, in a brand new unit!",
+        name: 'Tyrous W.',
+        username: '@tyrousw',
+        img: 'https://avatar.vercel.sh/tyrousw',
+    },
+    {
         text: "Apartment Key made my move so easy. I told them my budget and two days later I was signing a lease!",
         name: 'Sarah M.',
         username: '@sarahm',
         img: 'https://avatar.vercel.sh/sarahm',
-    },
-    {
-        text: "They actually listened to what I wanted — no pushy sales tactics, just helpful people.",
-        name: 'Michael R.',
-        username: '@michaelr',
-        img: 'https://avatar.vercel.sh/michaelr',
-    },
-    {
-        text: "Fast, free, and friendly. I recommend Apartment Key to anyone moving to Houston.",
-        name: 'Jessica L.',
-        username: '@jessical',
-        img: 'https://avatar.vercel.sh/jessical',
-    },
-    {
-        text: "Found my dream apartment in Midtown within a week. The team was professional and efficient!",
-        name: 'David T.',
-        username: '@davidt',
-        img: 'https://avatar.vercel.sh/davidt',
-    },
-    {
-        text: "Best apartment locating service in Houston. They saved me so much time and stress!",
-        name: 'Emily R.',
-        username: '@emilyr',
-        img: 'https://avatar.vercel.sh/emilyr',
-    },
-    {
-        text: "Highly recommend! They knew exactly what I was looking for and delivered beyond expectations.",
-        name: 'James K.',
-        username: '@jamesk',
-        img: 'https://avatar.vercel.sh/jamesk',
     },
 ]
 
@@ -116,7 +116,7 @@ export const Reviews: React.FC = () => {
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl sm:text-4xl font-bold mb-3 bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan bg-clip-text text-transparent pb-2">
-                        What Renters Are Saying
+                        What Our Renters Are Saying
                     </h2>
                     <p className="text-gray-600 text-base sm:text-lg">
                         Real Reviews from Happy Apartment Shoppers

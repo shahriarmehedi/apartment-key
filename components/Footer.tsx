@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
                                 <KeyRound className="w-5 h-5 text-white" />
                             </div>
                             <span className="text-lg font-bold text-gray-900">Apartment Key</span> */}
-                            <img src="/Final.png" alt="Apartment Key Logo" className=" h-10" />
+                            <img src="/logo.png" alt="Apartment Key Logo" className=" h-10" />
                         </div>
                         <p className="text-sm text-gray-400">
                             Houston&apos;s Trusted Apartment Locators

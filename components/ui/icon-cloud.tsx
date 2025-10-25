@@ -64,8 +64,8 @@ export function IconCloud({ icons, images, textItems }: IconCloudProps) {
 
     const newIconCanvases = combinedItems.map((item, index) => {
       const offscreen = document.createElement("canvas")
-      offscreen.width = 80
-      offscreen.height = 80
+      offscreen.width = 120
+      offscreen.height = 120
       const offCtx = offscreen.getContext("2d")
 
       if (offCtx) {
@@ -74,29 +74,38 @@ export function IconCloud({ icons, images, textItems }: IconCloudProps) {
           offCtx.clearRect(0, 0, offscreen.width, offscreen.height)
 
           // Create gradient
-          const gradient = offCtx.createLinearGradient(0, 0, 80, 80)
+          const gradient = offCtx.createLinearGradient(0, 0, 120, 120)
           gradient.addColorStop(0, '#FF8C42')  // Bold orange
           gradient.addColorStop(0.5, '#FFB6D9') // Pink accent
           gradient.addColorStop(1, '#00D4FF')  // Bright cyan
 
-          // Draw circle
+          // Draw filled circle - larger for better padding
           offCtx.beginPath()
-          offCtx.arc(40, 40, 38, 0, Math.PI * 2)
+          offCtx.arc(60, 60, 55, 0, Math.PI * 2)
           offCtx.fillStyle = gradient
           offCtx.fill()
 
-          // Add border
-          offCtx.strokeStyle = 'rgba(255, 255, 255, 0.3)'
-          offCtx.lineWidth = 2
+          // Add thick black border for modern pop effect
+          offCtx.beginPath()
+          offCtx.arc(60, 60, 55, 0, Math.PI * 2)
+          offCtx.strokeStyle = '#374151'
+          offCtx.lineWidth = 3
           offCtx.stroke()
 
-          // Draw text
+          // Draw text with better visibility
           const text = item.content as string
           offCtx.fillStyle = 'white'
           offCtx.textAlign = 'center'
           offCtx.textBaseline = 'middle'
-          offCtx.font = 'bold 13px sans-serif'
-          offCtx.fillText(text, 40, 40)
+
+          // Add text shadow for better readability
+          offCtx.shadowColor = 'rgba(0, 0, 0, 0.3)'
+          offCtx.shadowBlur = 4
+          offCtx.shadowOffsetX = 0
+          offCtx.shadowOffsetY = 1
+
+          offCtx.font = 'bold 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+          offCtx.fillText(text, 60, 60)
 
           imagesLoadedRef.current[index] = true
         } else if (item.type === 'image') {
@@ -109,12 +118,12 @@ export function IconCloud({ icons, images, textItems }: IconCloudProps) {
 
             // Create circular clipping path
             offCtx.beginPath()
-            offCtx.arc(40, 40, 40, 0, Math.PI * 2)
+            offCtx.arc(60, 60, 60, 0, Math.PI * 2)
             offCtx.closePath()
             offCtx.clip()
 
             // Draw the image
-            offCtx.drawImage(img, 0, 0, 80, 80)
+            offCtx.drawImage(img, 0, 0, 120, 120)
 
             imagesLoadedRef.current[index] = true
           }
@@ -319,7 +328,7 @@ export function IconCloud({ icons, images, textItems }: IconCloudProps) {
             iconCanvasesRef.current[index] &&
             imagesLoadedRef.current[index]
           ) {
-            ctx.drawImage(iconCanvasesRef.current[index], -40, -40, 80, 80)
+            ctx.drawImage(iconCanvasesRef.current[index], -60, -60, 120, 120)
           }
         } else {
           // Show numbered circles if no icons/images are provided
