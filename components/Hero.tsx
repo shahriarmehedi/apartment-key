@@ -280,20 +280,6 @@ export const Hero: React.FC = () => {
                                 className="absolute top-1/3 left-4 w-12 h-12 rounded-full bg-gradient-to-br from-brand-pink/60 to-brand-cyan/60 blur-md"
                             />
 
-                            <motion.div
-                                animate={{
-                                    y: [0, 20, 0],
-                                    x: [0, 15, 0],
-                                }}
-                                transition={{
-                                    duration: 5.5,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                    delay: 0.5
-                                }}
-                                className="absolute bottom-1/4 right-16 w-14 h-14 rounded-full bg-gradient-to-br from-brand-orange/55 to-brand-cyan/55 blur-md"
-                            />
-
                             {/* Decorative Corner Accents */}
                             <motion.div
                                 animate={{

@@ -226,7 +226,111 @@ export function MultiSelectionSingleStep({ config }: StepProps) {
     );
 }
 
-export function ReviewStep() {
+export function MultiSelectionGroupedStep({ config }: StepProps) {
+    const { formData, updateFormData } = useForm();
+    const fieldValue = (formData[config.field as keyof typeof formData] as string[]) || [];
+
+    const handleToggle = (value: string) => {
+        let updated = [...fieldValue];
+
+        if (updated.includes(value)) {
+            updated = updated.filter(v => v !== value);
+        } else {
+            updated = [...updated, value];
+        }
+
+        updateFormData(config.field, updated);
+    };
+
+    return (
+        <div className="max-w-7xl mx-auto">
+            {/* Mobile: Stacked cards */}
+            <div className="md:hidden space-y-6">
+                {config.groups.map((group: any) => (
+                    <motion.div
+                        key={group.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="bg-white rounded-2xl border-2 border-gray-200 p-6"
+                    >
+                        <h3 className="text-lg font-bold text-gray-900 mb-4 pb-3 border-b-2 border-gray-100">
+                            {group.name}
+                        </h3>
+                        <div className="space-y-2">
+                            {group.areas.map((area: any) => (
+                                <motion.button
+                                    key={area.id}
+                                    type="button"
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    onClick={() => handleToggle(area.value)}
+                                    className={`
+                                        w-full text-left px-4 py-3 rounded-lg border-2 transition-all
+                                        ${fieldValue.includes(area.value)
+                                            ? 'bg-gradient-to-r from-brand-orange to-brand-cyan text-white border-transparent font-semibold'
+                                            : 'bg-white border-gray-200 text-gray-700 hover:border-brand-cyan/50'
+                                        }
+                                    `}
+                                >
+                                    <div className="flex items-center justify-between">
+                                        <span className="text-sm">{area.label}</span>
+                                        {fieldValue.includes(area.value) && (
+                                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                        )}
+                                    </div>
+                                </motion.button>
+                            ))}
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
+
+            {/* Desktop: Compact multi-column layout */}
+            <div className="hidden md:block">
+                <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-6">
+                    {config.groups.map((group: any) => (
+                        <motion.div
+                            key={group.id}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <h3 className="text-base font-bold text-gray-900 mb-3 pb-2 border-b-2 border-brand-cyan/20">
+                                {group.name}
+                            </h3>
+                            <div className="space-y-2">
+                                {group.areas.map((area: any) => (
+                                    <label
+                                        key={area.id}
+                                        className="flex items-start space-x-2 cursor-pointer group"
+                                    >
+                                        <input
+                                            type="checkbox"
+                                            checked={fieldValue.includes(area.value)}
+                                            onChange={() => handleToggle(area.value)}
+                                            className="mt-0.5 w-4 h-4 rounded border-2 border-gray-300 text-brand-cyan focus:ring-2 focus:ring-brand-cyan/20 cursor-pointer"
+                                        />
+                                        <span className={`text-sm leading-tight transition-colors ${fieldValue.includes(area.value)
+                                            ? 'text-brand-coral font-semibold'
+                                            : 'text-gray-700 group-hover:text-brand-cyan'
+                                            }`}>
+                                            {area.label}
+                                        </span>
+                                    </label>
+                                ))}
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export function ReviewStep({ allSteps }: { allSteps: any[] }) {
     const { formData } = useForm();
 
     const formatFieldName = (key: string): string => {
@@ -236,13 +340,54 @@ export function ReviewStep() {
             .trim();
     };
 
-    const formatValue = (value: any): string => {
+    const formatValue = (key: string, value: any): string => {
+        // Find the step config for this field
+        const stepConfig = allSteps.find(step => step.field === key);
+
         if (Array.isArray(value)) {
+            // Handle multi-selection-grouped (location)
+            if (stepConfig?.type === 'multi-selection-grouped' && stepConfig.groups) {
+                const labels: string[] = [];
+                stepConfig.groups.forEach((group: any) => {
+                    group.areas.forEach((area: any) => {
+                        if (value.includes(area.value)) {
+                            labels.push(area.label);
+                        }
+                    });
+                });
+                return labels.join(', ') || 'N/A';
+            }
+            // Handle other multi-selections
+            if (stepConfig?.options) {
+                const labels = value.map((val: string) => {
+                    const option = stepConfig.options.find((opt: any) => opt.value === val);
+                    return option?.label || val;
+                });
+                return labels.join(', ') || 'N/A';
+            }
             return value.join(', ');
         }
+
+        // Handle single selections
+        if (stepConfig?.options) {
+            const option = stepConfig.options.find((opt: any) => opt.value === value);
+            if (option) return option.label;
+        }
+
+        // Handle numbers (budget, income)
         if (typeof value === 'number') {
             return `$${value.toLocaleString()}`;
         }
+
+        // Handle dates
+        if (key === 'moveInDate' && value) {
+            return new Date(value).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+
         return value?.toString() || 'N/A';
     };
 
@@ -259,7 +404,7 @@ export function ReviewStep() {
                                 {formatFieldName(key)}
                             </div>
                             <div className="text-lg text-gray-900">
-                                {formatValue(value)}
+                                {formatValue(key, value)}
                             </div>
                         </div>
                     ))}

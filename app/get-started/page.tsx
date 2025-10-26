@@ -11,6 +11,7 @@ import {
     DateStep,
     DropdownStep,
     MultiSelectionSingleStep,
+    MultiSelectionGroupedStep,
     ReviewStep,
 } from '@/components/form/FormSteps';
 import formConfig from '@/data/form-config.json';
@@ -44,8 +45,10 @@ function FormContent() {
                 return <DropdownStep config={stepConfig} />;
             case 'multi-selection-single':
                 return <MultiSelectionSingleStep config={stepConfig} />;
+            case 'multi-selection-grouped':
+                return <MultiSelectionGroupedStep config={stepConfig} />;
             case 'review':
-                return <ReviewStep />;
+                return <ReviewStep allSteps={formConfig.steps} />;
             default:
                 return null;
         }

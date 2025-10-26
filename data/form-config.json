@@ -134,85 +134,82 @@
     {
       "id": "location",
       "title": "Where would you like to <span class='text-brand-coral'>live</span>?",
-      "type": "dropdown",
+      "type": "multi-selection-grouped",
       "field": "location",
       "required": true,
-      "placeholder": "Select a city...",
-      "options": [
+      "multiple": true,
+      "groups": [
         {
-          "id": "houston",
-          "label": "Houston",
-          "value": "houston"
+          "id": "central",
+          "name": "Central Houston",
+          "areas": [
+            { "id": "midtown", "label": "Midtown", "value": "midtown" },
+            { "id": "highland-village", "label": "Highland Village/ Upper Kirby/ W...", "value": "highland-village" },
+            { "id": "med-center", "label": "Med Center/ Braes Bayou", "value": "med-center" },
+            { "id": "heights", "label": "Heights/ Washington Ave", "value": "heights" },
+            { "id": "downtown", "label": "Downtown", "value": "downtown" }
+          ]
         },
         {
-          "id": "cypress",
-          "label": "Cypress",
-          "value": "cypress"
+          "id": "southwest",
+          "name": "Southwest Houston",
+          "areas": [
+            { "id": "galleria", "label": "Galleria/ Uptown", "value": "galleria" },
+            { "id": "woodlake", "label": "Woodlake/ Westheimer", "value": "woodlake" },
+            { "id": "energy-corridor", "label": "Energy Corridor/ CityCentre/ Bri...", "value": "energy-corridor" },
+            { "id": "westchase", "label": "Westchase", "value": "westchase" },
+            { "id": "alief", "label": "Alief", "value": "alief" },
+            { "id": "sharpstown", "label": "Sharpstown/ Westwood", "value": "sharpstown" },
+            { "id": "westpark", "label": "Westpark/ Bissonnet", "value": "westpark" },
+            { "id": "braeswood", "label": "Braeswood/ Fondren SW", "value": "braeswood" },
+            { "id": "almeda", "label": "Almeda/ South Main", "value": "almeda" },
+            { "id": "sugar-land", "label": "Sugar Land/ Stafford/ Sienna", "value": "sugar-land" },
+            { "id": "richmond", "label": "Richmond/ Rosenberg", "value": "richmond" }
+          ]
         },
         {
-          "id": "spring",
-          "label": "Spring",
-          "value": "spring"
+          "id": "northwest",
+          "name": "Northwest Houston",
+          "areas": [
+            { "id": "brookshire", "label": "Brookshire/ Katy/ Northwest Crossing", "value": "brookshire" },
+            { "id": "memorial", "label": "Memorial/ Spring Branch", "value": "memorial" },
+            { "id": "inwood", "label": "Inwood/ Hwy 249", "value": "inwood" },
+            { "id": "willowbrook", "label": "Willowbrook/ Champions/ Ella", "value": "willowbrook" },
+            { "id": "jersey-village", "label": "Jersey Village/ Cypress", "value": "jersey-village" },
+            { "id": "bear-creek", "label": "Bear Creek/ Copperfield/ Fairfield", "value": "bear-creek" },
+            { "id": "katy", "label": "Katy/ Cinco Ranch/ Waterside", "value": "katy" },
+            { "id": "tomball", "label": "Tomball/ Hufsmith", "value": "tomball" },
+            { "id": "woodlands-south", "label": "Woodlands/ Conroe South", "value": "woodlands-south" },
+            { "id": "conroe-north", "label": "Conroe North/ Montgomery", "value": "conroe-north" }
+          ]
         },
         {
-          "id": "richmond",
-          "label": "Richmond",
-          "value": "richmond"
+          "id": "northeast",
+          "name": "Northeast Houston",
+          "areas": [
+            { "id": "i10-east", "label": "I-10 East/ Woodforest/ Channelview", "value": "i10-east" },
+            { "id": "i69-north", "label": "I-69 North", "value": "i69-north" },
+            { "id": "northline", "label": "Northline", "value": "northline" },
+            { "id": "greenspoint", "label": "Greenspoint/ Northborough/ Aldine", "value": "greenspoint" },
+            { "id": "fm1960", "label": "FM 1960 East/ IAH Airport", "value": "fm1960" },
+            { "id": "lake-houston", "label": "Lake Houston/ Kingwood", "value": "lake-houston" },
+            { "id": "northeast-houston", "label": "Northeast Houston/ Crosby", "value": "northeast-houston" }
+          ]
         },
         {
-          "id": "pearland",
-          "label": "Pearland",
-          "value": "pearland"
-        },
-        {
-          "id": "woodlands",
-          "label": "Woodlands",
-          "value": "woodlands"
-        },
-        {
-          "id": "katy",
-          "label": "Katy",
-          "value": "katy"
-        },
-        {
-          "id": "sugarland",
-          "label": "Sugarland",
-          "value": "sugarland"
-        },
-        {
-          "id": "conroe",
-          "label": "Conroe",
-          "value": "conroe"
-        },
-        {
-          "id": "medcenter",
-          "label": "Med Center",
-          "value": "med-center"
-        },
-        {
-          "id": "downtown",
-          "label": "Downtown",
-          "value": "downtown"
-        },
-        {
-          "id": "stafford",
-          "label": "Stafford",
-          "value": "stafford"
-        },
-        {
-          "id": "montgomery",
-          "label": "Montgomery",
-          "value": "montgomery"
-        },
-        {
-          "id": "tomball",
-          "label": "Tomball",
-          "value": "tomball"
-        },
-        {
-          "id": "galveston",
-          "label": "Galveston",
-          "value": "galveston"
+          "id": "southeast",
+          "name": "Southeast Houston",
+          "areas": [
+            { "id": "hwy288", "label": "Hwy 288 South/ Pearland West", "value": "hwy288" },
+            { "id": "u-of-h", "label": "U of H/ I-45 South", "value": "u-of-h" },
+            { "id": "beltway8", "label": "Beltway 8 / I-45 South", "value": "beltway8" },
+            { "id": "pasadena", "label": "Pasadena/ Deer Park/ La Porte", "value": "pasadena" },
+            { "id": "friendswood", "label": "Friendswood/ Pearland East", "value": "friendswood" },
+            { "id": "clear-lake", "label": "Clear Lake/ Webster/ League City", "value": "clear-lake" },
+            { "id": "baytown", "label": "Baytown", "value": "baytown" },
+            { "id": "dickinson", "label": "Dickinson/ Galveston", "value": "dickinson" },
+            { "id": "alvin", "label": "Alvin/ Angleton/ Lake Jackson", "value": "alvin" }
+          ]
         }
       ]
     },

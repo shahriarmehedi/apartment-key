@@ -77,9 +77,15 @@ export const Footer: React.FC = () => {
                     </div>
                 </div>
 
+                <div className='pb-7 pt-10'>
+                    <a href="/60c80b392b87423009aa83fb_TREC Consumer Protection Notice.pdf" target='_blank' className="inline-flex items-center space-x-2 text-sm text-gray-400 hover:text-brand-orange transition-colors">
+                        <span className='text-sky-400'>Texas Real Estate Commission Consumer Protection Notice</span>
+                    </a>
+                </div>
+
                 {/* Bottom Bar */}
                 <div className="border-t border-gray-600 pt-6 text-center">
-                    <p className="text-xs text-gray-400">&copy; {new Date().getFullYear()} Apartment Key. All rights reserved.</p>
+                    <p className="text-xs text-gray-400">&copy; {new Date().getFullYear()} <span className='text-brand-coral'>Apartment Key</span>. All rights reserved.</p>
                 </div>
             </div>
         </footer>

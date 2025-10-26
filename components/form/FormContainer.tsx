@@ -117,6 +117,24 @@ export function FormContainer({ children, title, stepConfig, footer, onSubmit }:
                 }
                 return true;
 
+            case 'multi-selection-grouped':
+                const groupedValue = formData[config.field as keyof typeof formData];
+                if (!groupedValue || (Array.isArray(groupedValue) && groupedValue.length === 0)) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Selection Required',
+                        text: 'Please select at least one area to continue',
+                        confirmButtonColor: '#FF9E6D',
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                    });
+                    return false;
+                }
+                return true;
+
             case 'slider':
             case 'income':
                 const sliderValue = formData[config.field as keyof typeof formData];
