@@ -188,8 +188,179 @@ export const Hero: React.FC = () => {
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="flex justify-center items-center w-full"
                     >
-                        <div className="w-full flex justify-center max-w-[650px] lg:max-w-[700px]">
-                            <IconCloud images={apartmentImages} textItems={cityNames} />
+                        <div className="relative w-full flex justify-center max-w-[650px] lg:max-w-[700px]">
+                            {/* Glowing Background Container */}
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                {/* Main glow circle */}
+                                <motion.div
+                                    animate={{
+                                        scale: [1, 1.05, 1],
+                                        opacity: [0.35, 0.5, 0.35],
+                                    }}
+                                    transition={{
+                                        duration: 4,
+                                        repeat: Infinity,
+                                        ease: "easeInOut"
+                                    }}
+                                    className="absolute w-[500px] h-[500px] rounded-full bg-gradient-to-br from-brand-orange/20 via-brand-pink/20 to-brand-cyan/20 blur-3xl"
+                                />
+
+                                {/* Secondary pulsing glow */}
+                                <motion.div
+                                    animate={{
+                                        scale: [1.05, 1, 1.05],
+                                        opacity: [0.2, 0.35, 0.2],
+                                    }}
+                                    transition={{
+                                        duration: 5,
+                                        repeat: Infinity,
+                                        ease: "easeInOut",
+                                        delay: 1
+                                    }}
+                                    className="absolute w-[450px] h-[450px] rounded-full bg-gradient-to-tl from-brand-cyan/25 via-brand-pink/20 to-brand-orange/25 blur-2xl"
+                                />
+
+                                {/* Outer ring glow */}
+                                <motion.div
+                                    animate={{
+                                        rotate: [0, 360],
+                                        scale: [1, 1.02, 1],
+                                    }}
+                                    transition={{
+                                        rotate: { duration: 20, repeat: Infinity, ease: "linear" },
+                                        scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+                                    }}
+                                    className="absolute w-[550px] h-[550px] rounded-full"
+                                    style={{
+                                        background: 'conic-gradient(from 0deg, rgba(255,140,66,0.2), rgba(255,182,217,0.2), rgba(0,212,255,0.2), rgba(255,140,66,0.2))',
+                                        filter: 'blur(40px)'
+                                    }}
+                                />
+                            </div>
+
+                            {/* Floating Decorative Orbs */}
+                            <motion.div
+                                animate={{
+                                    y: [0, -20, 0],
+                                    x: [0, 10, 0],
+                                }}
+                                transition={{
+                                    duration: 6,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                                className="absolute top-8 right-8 w-16 h-16 rounded-full bg-gradient-to-br from-brand-orange/60 to-brand-pink/60 blur-lg"
+                            />
+
+                            <motion.div
+                                animate={{
+                                    y: [0, 15, 0],
+                                    x: [0, -15, 0],
+                                }}
+                                transition={{
+                                    duration: 5,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                    delay: 1
+                                }}
+                                className="absolute bottom-12 left-12 w-20 h-20 rounded-full bg-gradient-to-br from-brand-cyan/60 to-brand-pink/60 blur-lg"
+                            />
+
+                            <motion.div
+                                animate={{
+                                    y: [0, -10, 0],
+                                    x: [0, -10, 0],
+                                }}
+                                transition={{
+                                    duration: 7,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                    delay: 2
+                                }}
+                                className="absolute top-1/3 left-4 w-12 h-12 rounded-full bg-gradient-to-br from-brand-pink/60 to-brand-cyan/60 blur-md"
+                            />
+
+                            <motion.div
+                                animate={{
+                                    y: [0, 20, 0],
+                                    x: [0, 15, 0],
+                                }}
+                                transition={{
+                                    duration: 5.5,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                    delay: 0.5
+                                }}
+                                className="absolute bottom-1/4 right-16 w-14 h-14 rounded-full bg-gradient-to-br from-brand-orange/55 to-brand-cyan/55 blur-md"
+                            />
+
+                            {/* Decorative Corner Accents */}
+                            <motion.div
+                                animate={{
+                                    opacity: [0.3, 0.6, 0.3],
+                                    scale: [1, 1.1, 1],
+                                }}
+                                transition={{
+                                    duration: 3,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                                className="absolute top-0 right-0 w-32 h-32"
+                            >
+                                <div className="absolute top-0 right-0 w-24 h-1 bg-gradient-to-l from-brand-cyan/60 to-transparent rounded-full" />
+                                <div className="absolute top-0 right-0 w-1 h-24 bg-gradient-to-b from-brand-cyan/60 to-transparent rounded-full" />
+                            </motion.div>
+
+                            <motion.div
+                                animate={{
+                                    opacity: [0.3, 0.6, 0.3],
+                                    scale: [1, 1.1, 1],
+                                }}
+                                transition={{
+                                    duration: 3,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                    delay: 1.5
+                                }}
+                                className="absolute bottom-0 left-0 w-32 h-32"
+                            >
+                                <div className="absolute bottom-0 left-0 w-24 h-1 bg-gradient-to-r from-brand-orange/60 to-transparent rounded-full" />
+                                <div className="absolute bottom-0 left-0 w-1 h-24 bg-gradient-to-t from-brand-orange/60 to-transparent rounded-full" />
+                            </motion.div>
+
+                            {/* Subtle Grid Pattern Overlay */}
+                            <div className="absolute inset-0 rounded-full" style={{
+                                background: 'radial-gradient(circle, transparent 40%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0.05) 41%, transparent 41%), radial-gradient(circle, transparent 60%, rgba(255,255,255,0.05) 60%, rgba(255,255,255,0.05) 61%, transparent 61%)',
+                                backgroundSize: '100% 100%'
+                            }} />
+
+                            {/* IconCloud with enhanced container */}
+                            <div className="relative z-10">
+                                <IconCloud images={apartmentImages} textItems={cityNames} />
+                            </div>
+
+                            {/* Sparkle Effects */}
+                            {[...Array(8)].map((_, i) => (
+                                <motion.div
+                                    key={i}
+                                    animate={{
+                                        scale: [0, 1, 0],
+                                        opacity: [0, 1, 0],
+                                    }}
+                                    transition={{
+                                        duration: 2,
+                                        repeat: Infinity,
+                                        delay: i * 0.3,
+                                        ease: "easeInOut"
+                                    }}
+                                    className="absolute w-2 h-2 bg-white rounded-full"
+                                    style={{
+                                        top: `${15 + Math.sin(i * Math.PI / 4) * 35 + 35}%`,
+                                        left: `${15 + Math.cos(i * Math.PI / 4) * 35 + 35}%`,
+                                        boxShadow: '0 0 10px rgba(255,255,255,0.8)'
+                                    }}
+                                />
+                            ))}
                         </div>
                     </motion.div>
                 </div>

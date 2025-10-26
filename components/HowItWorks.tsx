@@ -58,7 +58,7 @@ export const HowItWorks: React.FC = () => {
                         How It Works
                     </h2>
                     <p className="text-lg text-gray-600">
-                        Three simple steps to your next Apartment Key
+                        Three simple steps to your next ... <span className="text-brand-orange">Apartment Key</span>
                     </p>
                 </motion.div>
 

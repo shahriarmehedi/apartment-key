@@ -27,7 +27,7 @@ export const FreeService: React.FC = () => {
                     >
                         <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
                             <Image
-                                src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop"
+                                src="/Orange Pillow Sofa.jpeg"
                                 alt="Happy renters in their new apartment"
                                 width={800}
                                 height={600}

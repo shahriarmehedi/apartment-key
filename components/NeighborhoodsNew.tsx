@@ -16,7 +16,7 @@ const features = [
     },
     {
         title: 'Real-time accurate availability',
-        description: 'No fake ads or old posts.',
+        description: 'Current Pricing & Specials',
     },
     {
         title: 'Faster Results',
@@ -122,7 +122,7 @@ export const NeighborhoodsNew: React.FC = () => {
                                 transition={{ duration: 0.6, delay: 0.5 }}
                                 className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 bg-black/20 backdrop-blur-sm rounded-2xl p-3 sm:p-4 shadow-xl "
                             >
-                                <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
+                                <div className="grid grid-cols-2 gap-2 sm:gap-4 text-center">
                                     <div>
                                         <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan bg-clip-text text-transparent">11+</div>
                                         <div className="text-[10px] sm:text-xs text-gray-200 mt-0.5">Years Exp</div>
@@ -131,10 +131,7 @@ export const NeighborhoodsNew: React.FC = () => {
                                         <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan bg-clip-text text-transparent">100%</div>
                                         <div className="text-[10px] sm:text-xs text-gray-200 mt-0.5">Free</div>
                                     </div>
-                                    <div>
-                                        <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan bg-clip-text text-transparent">1000+</div>
-                                        <div className="text-[10px] sm:text-xs text-gray-200 mt-0.5">Happy</div>
-                                    </div>
+
                                 </div>
                             </motion.div>
                         </div>
