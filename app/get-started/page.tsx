@@ -9,6 +9,7 @@ import {
     ListSelectionStep,
     SliderStep,
     DateStep,
+    DropdownStep,
     MultiSelectionSingleStep,
     ReviewStep,
 } from '@/components/form/FormSteps';
@@ -39,6 +40,8 @@ function FormContent() {
                 return <SliderStep config={stepConfig} />;
             case 'date':
                 return <DateStep config={stepConfig} />;
+            case 'dropdown':
+                return <DropdownStep config={stepConfig} />;
             case 'multi-selection-single':
                 return <MultiSelectionSingleStep config={stepConfig} />;
             case 'review':

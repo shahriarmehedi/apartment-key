@@ -16,11 +16,7 @@ export const Footer: React.FC = () => {
                     {/* Brand Column */}
                     <div>
                         <div className="flex items-center space-x-2 mb-3">
-                            {/* <div className="bg-gray-900 p-2 rounded-lg">
-                                <KeyRound className="w-5 h-5 text-white" />
-                            </div>
-                            <span className="text-lg font-bold text-gray-900">Apartment Key</span> */}
-                            <img src="/logo.png" alt="Apartment Key Logo" className=" h-10" />
+                            <img src="/logo.png" alt="Apartment Key Logo" className="h-14" />
                         </div>
                         <p className="text-sm text-gray-400">
                             Houston&apos;s Trusted Apartment Locators

@@ -54,7 +54,7 @@ export const FreeService: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: 0.5 }}
-                                className="absolute bottom-4 sm:bottom-6 right-4 sm:right-6 bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan rounded-2xl px-4 sm:px-6 py-2 sm:py-3 shadow-xl"
+                                className="absolute bottom-4 sm:bottom-6 right-4 sm:right-6 bg-brand-orange rounded-2xl px-4 sm:px-6 py-2 sm:py-3 shadow-xl"
                             >
                                 <span className="font-bold text-white text-base sm:text-lg">Always Free!</span>
                             </motion.div>

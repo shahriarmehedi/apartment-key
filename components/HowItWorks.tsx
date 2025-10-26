@@ -71,7 +71,8 @@ export const HowItWorks: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="relative bg-white rounded-3xl p-6 sm:p-8 h-full hover:shadow-2xl transition-all group overflow-hidden border-2 border-gray-200 hover:border-brand-coral"
+                            whileHover={{ scale: 1.05 }}
+                            className="relative bg-gradient-to-br from-brand-orange/5 via-brand-pink/5 to-brand-cyan/5 rounded-3xl p-6 sm:p-8 h-full hover:shadow-2xl transition-all group overflow-hidden border-2 border-gray-200 hover:border-brand-orange"
                         >
                             <div className="relative flex flex-col items-center text-center space-y-4">
                                 {/* Step Number & Icon */}
@@ -79,8 +80,8 @@ export const HowItWorks: React.FC = () => {
                                     <span className="text-xs font-bold tracking-wider bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan bg-clip-text text-transparent">
                                         STEP {step.number}
                                     </span>
-                                    <div className="relative p-5 rounded-2xl bg-gray-50 group-hover:bg-gradient-to-br group-hover:from-brand-orange group-hover:via-brand-pink group-hover:to-brand-cyan transition-all duration-300">
-                                        <step.icon className="w-8 h-8 text-gray-700 group-hover:text-white transition-colors" strokeWidth={2} />
+                                    <div className="relative p-5 rounded-2xl bg-gradient-to-br from-brand-orange/15 via-brand-pink/10 to-brand-cyan/15 group-hover:from-brand-orange group-hover:via-brand-pink group-hover:to-brand-cyan transition-all duration-300">
+                                        <step.icon className="w-8 h-8 text-brand-orange group-hover:text-white transition-colors" strokeWidth={2} />
                                     </div>
                                 </div>
 

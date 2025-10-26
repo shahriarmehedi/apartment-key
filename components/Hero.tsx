@@ -37,7 +37,7 @@ export const Hero: React.FC = () => {
     }
 
     return (
-        <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <section id="hero" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-16 pb-12">
             {/* Animated Gradient Mesh Background */}
             <div className="absolute inset-0 overflow-hidden">
                 {/* Main gradient orbs */}
@@ -123,10 +123,10 @@ export const Hero: React.FC = () => {
             {/* Radial gradient overlay for vignette effect */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(255,255,255,0.8)_100%)]" />
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                     {/* Left Content */}
-                    <div className="text-center lg:text-left space-y-6">
+                    <div className="text-center lg:text-left space-y-5">
                         {/* Badge */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -186,9 +186,9 @@ export const Hero: React.FC = () => {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
-                        className="flex justify-center lg:justify-end items-center"
+                        className="flex justify-center items-center w-full"
                     >
-                        <div className="w-full max-w-[650px] lg:max-w-[700px]">
+                        <div className="w-full flex justify-center max-w-[650px] lg:max-w-[700px]">
                             <IconCloud images={apartmentImages} textItems={cityNames} />
                         </div>
                     </motion.div>

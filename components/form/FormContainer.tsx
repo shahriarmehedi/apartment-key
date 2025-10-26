@@ -99,6 +99,7 @@ export function FormContainer({ children, title, stepConfig, footer, onSubmit }:
 
             case 'selection':
             case 'list-selection':
+            case 'dropdown':
                 const value = formData[config.field as keyof typeof formData];
                 if (!value) {
                     Swal.fire({

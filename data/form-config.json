@@ -2,7 +2,7 @@
   "steps": [
     {
       "id": "name",
-      "title": "Let's get started! What's your <span class='text-brand-coral'>name</span>?",
+      "title": "Let's get started!<br/>What's your <span class='text-brand-coral'>name</span>?",
       "type": "form",
       "fields": [
         {
@@ -55,6 +55,7 @@
       "type": "selection",
       "field": "bedrooms",
       "required": true,
+      "columns": 2,
       "options": [
         {
           "id": "studio",
@@ -112,9 +113,9 @@
       "type": "slider",
       "field": "maxBudget",
       "required": true,
-      "min": 500,
-      "max": 5000,
-      "step": 100,
+      "min": 850,
+      "max": 10000,
+      "step": 50,
       "default": 1500,
       "format": "currency"
     },
@@ -128,44 +129,96 @@
       "max": 20000,
       "step": 500,
       "default": 4000,
-      "format": "currency",
-      "extraQuestion": {
-        "label": "Additional occupants over 18?",
-        "field": "additionalOccupants",
-        "type": "select",
-        "options": ["None", "1 person", "2 people", "3+ people"]
-      }
+      "format": "currency"
     },
     {
       "id": "location",
       "title": "Where would you like to <span class='text-brand-coral'>live</span>?",
-      "type": "selection",
+      "type": "dropdown",
       "field": "location",
       "required": true,
+      "placeholder": "Select a city...",
       "options": [
         {
-          "id": "hou",
+          "id": "houston",
           "label": "Houston",
-          "value": "houston",
-          "abbreviation": "HOU"
+          "value": "houston"
         },
         {
-          "id": "dfw",
-          "label": "Dallas / Fort Worth",
-          "value": "dallas-fort-worth",
-          "abbreviation": "DFW"
+          "id": "cypress",
+          "label": "Cypress",
+          "value": "cypress"
         },
         {
-          "id": "atx",
-          "label": "Austin",
-          "value": "austin",
-          "abbreviation": "ATX"
+          "id": "spring",
+          "label": "Spring",
+          "value": "spring"
+        },
+        {
+          "id": "richmond",
+          "label": "Richmond",
+          "value": "richmond"
+        },
+        {
+          "id": "pearland",
+          "label": "Pearland",
+          "value": "pearland"
+        },
+        {
+          "id": "woodlands",
+          "label": "Woodlands",
+          "value": "woodlands"
+        },
+        {
+          "id": "katy",
+          "label": "Katy",
+          "value": "katy"
+        },
+        {
+          "id": "sugarland",
+          "label": "Sugarland",
+          "value": "sugarland"
+        },
+        {
+          "id": "conroe",
+          "label": "Conroe",
+          "value": "conroe"
+        },
+        {
+          "id": "medcenter",
+          "label": "Med Center",
+          "value": "med-center"
+        },
+        {
+          "id": "downtown",
+          "label": "Downtown",
+          "value": "downtown"
+        },
+        {
+          "id": "stafford",
+          "label": "Stafford",
+          "value": "stafford"
+        },
+        {
+          "id": "montgomery",
+          "label": "Montgomery",
+          "value": "montgomery"
+        },
+        {
+          "id": "tomball",
+          "label": "Tomball",
+          "value": "tomball"
+        },
+        {
+          "id": "galveston",
+          "label": "Galveston",
+          "value": "galveston"
         }
       ]
     },
     {
       "id": "timeframe",
-      "title": "When do you want to move in? <span class='text-brand-coral'>(Timeframe)</span>",
+      "title": "What's your move in <span class='text-brand-coral'>timeframe</span>?",
       "type": "date",
       "field": "moveInDate",
       "required": true,

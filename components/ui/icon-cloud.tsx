@@ -76,7 +76,7 @@ export function IconCloud({ icons, images, textItems }: IconCloudProps) {
           // Create gradient
           const gradient = offCtx.createLinearGradient(0, 0, 120, 120)
           gradient.addColorStop(0, '#FF8C42')  // Bold orange
-          gradient.addColorStop(0.5, '#FFB6D9') // Pink accent
+          gradient.addColorStop(0.3, '#FFB6D9') // Pink accent
           gradient.addColorStop(1, '#00D4FF')  // Bright cyan
 
           // Draw filled circle - larger for better padding
@@ -89,7 +89,7 @@ export function IconCloud({ icons, images, textItems }: IconCloudProps) {
           offCtx.beginPath()
           offCtx.arc(60, 60, 55, 0, Math.PI * 2)
           offCtx.strokeStyle = '#374151'
-          offCtx.lineWidth = 3
+          offCtx.lineWidth = 1
           offCtx.stroke()
 
           // Draw text with better visibility
@@ -166,9 +166,9 @@ export function IconCloud({ icons, images, textItems }: IconCloudProps) {
       const z = Math.sin(phi) * r
 
       newIcons.push({
-        x: x * 150,
-        y: y * 150,
-        z: z * 150,
+        x: x * 170,
+        y: y * 170,
+        z: z * 170,
         scale: 1,
         opacity: 1,
         id: i,

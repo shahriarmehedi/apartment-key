@@ -75,9 +75,10 @@ export function FormStep({ config }: StepProps) {
 export function SelectionStep({ config }: StepProps) {
     const { formData, updateFormData } = useForm();
     const fieldValue = formData[config.field as keyof typeof formData];
+    const columns = config.columns || 3;
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className={`grid grid-cols-1 ${columns === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'} gap-6`}>
             {config.options.map((option: any) => (
                 <SelectionCard
                     key={option.id}
@@ -158,6 +159,27 @@ export function DateStep({ config }: StepProps) {
                 value={fieldValue || ''}
                 onChange={(e) => updateFormData(config.field, e.target.value)}
                 placeholder={config.placeholder}
+            />
+        </div>
+    );
+}
+
+export function DropdownStep({ config }: StepProps) {
+    const { formData, updateFormData } = useForm();
+    const fieldValue = formData[config.field as keyof typeof formData];
+
+    return (
+        <div className="max-w-md mx-auto">
+            <Select
+                label=""
+                placeholder={config.placeholder || 'Select an option...'}
+                options={config.options.map((opt: any) => opt.label)}
+                value={typeof fieldValue === 'string' ? fieldValue : ''}
+                onChange={(e) => {
+                    const selectedOption = config.options.find((opt: any) => opt.label === e.target.value);
+                    updateFormData(config.field, selectedOption?.value || e.target.value);
+                }}
+                required={config.required}
             />
         </div>
     );
