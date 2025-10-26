@@ -148,7 +148,7 @@ export const Reviews: React.FC = () => {
                     className="text-center"
                 >
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Join the growing community of happy Houston residents who found their home through <span className="font-bold pl-1 text-brand-coral"> Apartment Key</span>
+                        Join the growing community of happy Houstonians who found their home through <span className="font-bold pl-1 text-brand-coral"> Apartment Key</span>
                     </p>
                 </motion.div>
             </div>

@@ -21,11 +21,7 @@ const features = [
     {
         title: 'Faster Results',
         description: 'Curated list that matches your lifestyle & budget.',
-    },
-    {
-        title: '11+ Years Experienced Locators',
-        description: 'Houston born and raised.',
-    },
+    }
 ]
 
 export const NeighborhoodsNew: React.FC = () => {
@@ -60,9 +56,6 @@ export const NeighborhoodsNew: React.FC = () => {
                                     Apartment Key
                                 </span>
                             </h2>
-                            <p className="text-base sm:text-lg text-gray-600 mt-4">
-                                We&apos;re your personal Houston housing experts
-                            </p>
                         </motion.div>
 
                         <div className="space-y-3">
@@ -98,12 +91,12 @@ export const NeighborhoodsNew: React.FC = () => {
                         transition={{ duration: 0.8 }}
                         className="relative lg:pl-8 mt-12 lg:mt-0"
                     >
-                        <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[3/4]">
+                        <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-square">
                             <Image
-                                src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=1000&fit=crop"
+                                src="/Apartment and Keys.jpeg"
                                 alt="Houston neighborhoods"
                                 width={800}
-                                height={1000}
+                                height={800}
                                 className="w-full h-full object-cover"
                             />
 
@@ -117,7 +110,7 @@ export const NeighborhoodsNew: React.FC = () => {
                             >
                                 <div className="flex items-center space-x-2">
                                     <MapPin className="w-4 sm:w-5 h-4 sm:h-5 text-brand-coral" />
-                                    <span className="font-bold text-gray-900 text-sm sm:text-base whitespace-nowrap">All Houston Areas</span>
+                                    <span className="font-bold text-gray-900 text-sm sm:text-base whitespace-nowrap">All Greater Houston Areas</span>
                                 </div>
                             </motion.div>
 
@@ -127,20 +120,20 @@ export const NeighborhoodsNew: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: 0.5 }}
-                                className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-3 sm:p-4 shadow-xl"
+                                className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 bg-black/20 backdrop-blur-sm rounded-2xl p-3 sm:p-4 shadow-xl "
                             >
                                 <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
                                     <div>
                                         <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan bg-clip-text text-transparent">11+</div>
-                                        <div className="text-[10px] sm:text-xs text-gray-600 mt-0.5">Years Exp</div>
+                                        <div className="text-[10px] sm:text-xs text-gray-200 mt-0.5">Years Exp</div>
                                     </div>
                                     <div>
                                         <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan bg-clip-text text-transparent">100%</div>
-                                        <div className="text-[10px] sm:text-xs text-gray-600 mt-0.5">Free</div>
+                                        <div className="text-[10px] sm:text-xs text-gray-200 mt-0.5">Free</div>
                                     </div>
                                     <div>
                                         <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan bg-clip-text text-transparent">1000+</div>
-                                        <div className="text-[10px] sm:text-xs text-gray-600 mt-0.5">Happy</div>
+                                        <div className="text-[10px] sm:text-xs text-gray-200 mt-0.5">Happy</div>
                                     </div>
                                 </div>
                             </motion.div>

@@ -71,7 +71,7 @@ export const CTA: React.FC = () => {
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                         Ready to Find Your{' '}
                         <span className="bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan bg-clip-text text-transparent">
-                            New Apartment?
+                            <br /> New Apartment?
                         </span>
                     </h2>
                 </motion.div>
@@ -96,7 +96,7 @@ export const CTA: React.FC = () => {
                         by="word"
                         className="text-lg sm:text-xl text-gray-600"
                     >
-                        Start working with Professionals Today!
+                        Start working with Local Experts!
                     </TextAnimate>
                 </motion.div>
 
@@ -118,7 +118,7 @@ export const CTA: React.FC = () => {
                     </Link>
 
                     <p className="text-gray-500 text-sm">
-                        Get matched with top apartments today
+                        Get your list of apartment specials today!
                     </p>
                 </motion.div>
             </div>

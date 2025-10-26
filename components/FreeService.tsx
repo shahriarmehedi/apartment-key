@@ -98,36 +98,70 @@ export const FreeService: React.FC = () => {
                             className="space-y-4 text-gray-600"
                         >
                             <p className="text-base sm:text-lg leading-relaxed">
-                                <span className="font-semibold text-gray-700">Why pay for apartment hunting when you can get expert help for free?</span>
+                                <span className="font-semibold text-gray-700">Why pay for apartment hunting when you can get expert help for <span className='text-brand-orange'>FREE?</span></span>
                             </p>
                             <p className="text-base sm:text-lg leading-relaxed">
-                                Property managers compensate us when you lease through our service, meaning professional assistance costs you nothing.
+                                Property managers pay us when you lease through Apartment Key... meaning our professional Real Estate service costs you nothing.
                             </p>
                         </motion.div>
 
                         <div className="space-y-4 pt-4">
-                            {[
-                                { icon: Users, text: 'Renters get free professional apartment search.' },
-                                { icon: Home, text: 'Property owners fill vacancies with qualified tenants we connect them with.' },
-                                { icon: DollarSign, text: 'We receive compensation from properties for successful placements!' }
-                            ].map((item, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, x: 20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: 0.3 + index * 0.15 }}
-                                    whileHover={{ x: 10 }}
-                                    className="flex items-start space-x-3 cursor-pointer"
-                                >
-                                    <div className="flex-shrink-0 mt-1">
-                                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange/15 via-brand-pink/10 to-brand-cyan/15 flex items-center justify-center">
-                                            <item.icon className="w-5 h-5 text-brand-orange" strokeWidth={2.5} />
-                                        </div>
+                            {/* Item 1 */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.3 }}
+                                whileHover={{ x: 10 }}
+                                className="flex items-start space-x-3 cursor-pointer"
+                            >
+                                <div className="flex-shrink-0 mt-1">
+                                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange/15 via-brand-pink/10 to-brand-cyan/15 flex items-center justify-center">
+                                        <Users className="w-5 h-5 text-brand-orange" strokeWidth={2.5} />
                                     </div>
-                                    <p className="text-gray-900 font-medium flex-1 leading-relaxed">{item.text}</p>
-                                </motion.div>
-                            ))}
+                                </div>
+                                <p className="text-gray-900 font-medium flex-1 leading-relaxed">
+                                    Get your <span className='text-brand-orange'>FREE</span> customized apartment list
+                                </p>
+                            </motion.div>
+
+                            {/* Item 2 */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.45 }}
+                                whileHover={{ x: 10 }}
+                                className="flex items-start space-x-3 cursor-pointer"
+                            >
+                                <div className="flex-shrink-0 mt-1">
+                                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange/15 via-brand-pink/10 to-brand-cyan/15 flex items-center justify-center">
+                                        <Home className="w-5 h-5 text-brand-orange" strokeWidth={2.5} />
+                                    </div>
+                                </div>
+                                <p className="text-gray-900 font-medium flex-1 leading-relaxed">
+                                    Property owners fill their vacancies with your approved application
+                                </p>
+                            </motion.div>
+
+                            {/* Item 3 */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.6 }}
+                                whileHover={{ x: 10 }}
+                                className="flex items-start space-x-3 cursor-pointer"
+                            >
+                                <div className="flex-shrink-0 mt-1">
+                                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange/15 via-brand-pink/10 to-brand-cyan/15 flex items-center justify-center">
+                                        <DollarSign className="w-5 h-5 text-brand-orange" strokeWidth={2.5} />
+                                    </div>
+                                </div>
+                                <p className="text-gray-900 font-medium flex-1 leading-relaxed">
+                                    We receive commission from properties for successful apartment rentals!
+                                </p>
+                            </motion.div>
                         </div>
                     </motion.div>
                 </div>

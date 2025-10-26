@@ -24,7 +24,7 @@ export default function Home() {
                 <FreeService />
                 <NeighborhoodsNew />
                 <CTA />
-                <TrustIndicators />
+                {/* <TrustIndicators /> */}
                 <Footer />
             </div>
         </main>
