@@ -6,9 +6,6 @@ import { Button } from './ui/button'
 import Link from 'next/link'
 import { Sparkles, ArrowRight } from 'lucide-react'
 import { AuroraText } from './ui/aurora-text'
-import { IconCloud } from './ui/icon-cloud'
-
-const apartmentImages: string[] = []
 
 const cityNames = [
     'Houston',
@@ -181,172 +178,210 @@ export const Hero: React.FC = () => {
                         </motion.div>
                     </div>
 
-                    {/* Right Content - IconCloud */}
+                    {/* Right Content - Floating City Cards */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="flex justify-center items-center w-full"
                     >
-                        <div className="relative w-full flex justify-center max-w-[650px] lg:max-w-[700px]">
-                            {/* Glowing Background Container */}
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                {/* Main glow circle */}
-                                <motion.div
-                                    animate={{
-                                        scale: [1, 1.05, 1],
-                                        opacity: [0.35, 0.5, 0.35],
-                                    }}
-                                    transition={{
-                                        duration: 4,
-                                        repeat: Infinity,
-                                        ease: "easeInOut"
-                                    }}
-                                    className="absolute w-[500px] h-[500px] rounded-full bg-gradient-to-br from-brand-orange/20 via-brand-pink/20 to-brand-cyan/20 blur-3xl"
-                                />
-
-                                {/* Secondary pulsing glow */}
-                                <motion.div
-                                    animate={{
-                                        scale: [1.05, 1, 1.05],
-                                        opacity: [0.2, 0.35, 0.2],
-                                    }}
-                                    transition={{
-                                        duration: 5,
-                                        repeat: Infinity,
-                                        ease: "easeInOut",
-                                        delay: 1
-                                    }}
-                                    className="absolute w-[450px] h-[450px] rounded-full bg-gradient-to-tl from-brand-cyan/25 via-brand-pink/20 to-brand-orange/25 blur-2xl"
-                                />
-
-                                {/* Outer ring glow */}
-                                <motion.div
-                                    animate={{
-                                        rotate: [0, 360],
-                                        scale: [1, 1.02, 1],
-                                    }}
-                                    transition={{
-                                        rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-                                        scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-                                    }}
-                                    className="absolute w-[550px] h-[550px] rounded-full"
-                                    style={{
-                                        background: 'conic-gradient(from 0deg, rgba(255,140,66,0.2), rgba(255,182,217,0.2), rgba(0,212,255,0.2), rgba(255,140,66,0.2))',
-                                        filter: 'blur(40px)'
-                                    }}
-                                />
-                            </div>
-
-                            {/* Floating Decorative Orbs */}
+                        <div className="relative w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] md:w-[550px] md:h-[550px]">
+                            {/* Background glow effect */}
                             <motion.div
                                 animate={{
-                                    y: [0, -20, 0],
-                                    x: [0, 10, 0],
+                                    scale: [1, 1.1, 1],
+                                    opacity: [0.3, 0.5, 0.3],
                                 }}
                                 transition={{
-                                    duration: 6,
+                                    duration: 4,
                                     repeat: Infinity,
                                     ease: "easeInOut"
                                 }}
-                                className="absolute top-8 right-8 w-16 h-16 rounded-full bg-gradient-to-br from-brand-orange/60 to-brand-pink/60 blur-lg"
+                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] bg-gradient-to-br from-brand-orange/20 via-brand-pink/20 to-brand-cyan/20 blur-3xl rounded-full"
                             />
 
-                            <motion.div
-                                animate={{
-                                    y: [0, 15, 0],
-                                    x: [0, -15, 0],
-                                }}
-                                transition={{
-                                    duration: 5,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                    delay: 1
-                                }}
-                                className="absolute bottom-12 left-12 w-20 h-20 rounded-full bg-gradient-to-br from-brand-cyan/60 to-brand-pink/60 blur-lg"
-                            />
+                            {/* Central Houston Icon - Clean & Modern */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.6, delay: 1, type: "spring", stiffness: 150 }}
+                                    className="relative group cursor-pointer"
+                                >
+                                    {/* Animated glow rings */}
+                                    <motion.div
+                                        animate={{
+                                            scale: [1, 1.3, 1],
+                                            opacity: [0.3, 0.5, 0.3],
+                                        }}
+                                        transition={{
+                                            duration: 3,
+                                            repeat: Infinity,
+                                            ease: "easeInOut"
+                                        }}
+                                        className="absolute inset-0 bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan blur-2xl rounded-full"
+                                    />
 
-                            <motion.div
-                                animate={{
-                                    y: [0, -10, 0],
-                                    x: [0, -10, 0],
-                                }}
-                                transition={{
-                                    duration: 7,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                    delay: 2
-                                }}
-                                className="absolute top-1/3 left-4 w-12 h-12 rounded-full bg-gradient-to-br from-brand-pink/60 to-brand-cyan/60 blur-md"
-                            />
+                                    <motion.div
+                                        animate={{
+                                            scale: [1.1, 1.4, 1.1],
+                                            opacity: [0.2, 0.4, 0.2],
+                                        }}
+                                        transition={{
+                                            duration: 3,
+                                            repeat: Infinity,
+                                            ease: "easeInOut",
+                                            delay: 1
+                                        }}
+                                        className="absolute inset-0 bg-gradient-to-r from-brand-cyan via-brand-pink to-brand-orange blur-3xl rounded-full"
+                                    />
 
-                            {/* Decorative Corner Accents */}
-                            <motion.div
-                                animate={{
-                                    opacity: [0.3, 0.6, 0.3],
-                                    scale: [1, 1.1, 1],
-                                }}
-                                transition={{
-                                    duration: 3,
-                                    repeat: Infinity,
-                                    ease: "easeInOut"
-                                }}
-                                className="absolute top-0 right-0 w-32 h-32"
-                            >
-                                <div className="absolute top-0 right-0 w-24 h-1 bg-gradient-to-l from-brand-cyan/60 to-transparent rounded-full" />
-                                <div className="absolute top-0 right-0 w-1 h-24 bg-gradient-to-b from-brand-cyan/60 to-transparent rounded-full" />
-                            </motion.div>
+                                    {/* Main circle container */}
+                                    <motion.div
+                                        whileHover={{ scale: 1.05 }}
+                                        className="relative w-32 h-32 rounded-full bg-gradient-to-br from-white via-gray-50 to-white shadow-2xl border-4 border-white flex items-center justify-center overflow-hidden"
+                                    >
+                                        {/* Gradient overlay on hover */}
+                                        <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/0 via-brand-pink/0 to-brand-cyan/0 group-hover:from-brand-orange/10 group-hover:via-brand-pink/10 group-hover:to-brand-cyan/10 transition-all duration-500" />
 
-                            <motion.div
-                                animate={{
-                                    opacity: [0.3, 0.6, 0.3],
-                                    scale: [1, 1.1, 1],
-                                }}
-                                transition={{
-                                    duration: 3,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                    delay: 1.5
-                                }}
-                                className="absolute bottom-0 left-0 w-32 h-32"
-                            >
-                                <div className="absolute bottom-0 left-0 w-24 h-1 bg-gradient-to-r from-brand-orange/60 to-transparent rounded-full" />
-                                <div className="absolute bottom-0 left-0 w-1 h-24 bg-gradient-to-t from-brand-orange/60 to-transparent rounded-full" />
-                            </motion.div>
+                                        {/* Map pin icon with pulse */}
+                                        <motion.div
+                                            animate={{
+                                                y: [0, -3, 0],
+                                            }}
+                                            transition={{
+                                                duration: 2,
+                                                repeat: Infinity,
+                                                ease: "easeInOut"
+                                            }}
+                                            className="relative"
+                                        >
+                                            <svg
+                                                className="w-16 h-16"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                            >
+                                                <defs>
+                                                    <linearGradient id="pinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" stopColor="#FF8C42" />
+                                                        <stop offset="50%" stopColor="#FFB6D9" />
+                                                        <stop offset="100%" stopColor="#00D4FF" />
+                                                    </linearGradient>
+                                                </defs>
 
-                            {/* Subtle Grid Pattern Overlay */}
-                            <div className="absolute inset-0 rounded-full" style={{
-                                background: 'radial-gradient(circle, transparent 40%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0.05) 41%, transparent 41%), radial-gradient(circle, transparent 60%, rgba(255,255,255,0.05) 60%, rgba(255,255,255,0.05) 61%, transparent 61%)',
-                                backgroundSize: '100% 100%'
-                            }} />
+                                                <path
+                                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                                                    fill="url(#pinGradient)"
+                                                />
+                                                <circle cx="12" cy="9" r="2" fill="white" />
+                                            </svg>
+                                        </motion.div>
 
-                            {/* IconCloud with enhanced container */}
-                            <div className="relative z-10">
-                                <IconCloud images={apartmentImages} textItems={cityNames} />
+                                        {/* Rotating ring decoration */}
+                                        <motion.div
+                                            animate={{ rotate: 360 }}
+                                            transition={{
+                                                duration: 20,
+                                                repeat: Infinity,
+                                                ease: "linear"
+                                            }}
+                                            className="absolute inset-0"
+                                        >
+                                            <div className="absolute top-2 left-1/2 w-2 h-2 bg-brand-orange rounded-full -translate-x-1/2" />
+                                            <div className="absolute bottom-2 left-1/2 w-2 h-2 bg-brand-cyan rounded-full -translate-x-1/2" />
+                                        </motion.div>
+                                    </motion.div>
+                                </motion.div>
                             </div>
 
-                            {/* Sparkle Effects */}
-                            {[...Array(8)].map((_, i) => (
-                                <motion.div
-                                    key={i}
-                                    animate={{
-                                        scale: [0, 1, 0],
-                                        opacity: [0, 1, 0],
-                                    }}
-                                    transition={{
-                                        duration: 2,
-                                        repeat: Infinity,
-                                        delay: i * 0.3,
-                                        ease: "easeInOut"
-                                    }}
-                                    className="absolute w-2 h-2 bg-white rounded-full"
-                                    style={{
-                                        top: `${15 + Math.sin(i * Math.PI / 4) * 35 + 35}%`,
-                                        left: `${15 + Math.cos(i * Math.PI / 4) * 35 + 35}%`,
-                                        boxShadow: '0 0 10px rgba(255,255,255,0.8)'
-                                    }}
-                                />
-                            ))}
+                            {/* Floating City Cards - Circular Natural Layout */}
+                            {cityNames.map((city, index) => {
+                                // Perfect circular arrangement with varied distances for natural look
+                                // Center is at 275, 275 (50% of 550px container)
+                                const desktopPositions = [
+                                    { x: 110, y: 85 },      // Houston - top-left, closer
+                                    { x: 430, y: 155 },     // Cypress - right, further out
+                                    { x: 420, y: 290 },     // Spring - right-middle
+                                    { x: 380, y: 410 },     // Richmond - bottom-right
+                                    { x: 275, y: 455 },     // Pearland - bottom-center, far
+                                    { x: 150, y: 440 },     // Woodlands - bottom-left, far
+                                    { x: 65, y: 360 },      // Katy - left-bottom
+                                    { x: 50, y: 240 },      // Sugarland - left-middle, further
+                                    { x: 80, y: 140 },      // Conroe - left-top
+                                    { x: 190, y: 70 },      // Med Center - top, closer
+                                    { x: 275, y: 50 },      // Downtown - top-center, closest
+                                    { x: 360, y: 75 },      // Stafford - top-right, closer
+                                    { x: 465, y: 200 },     // Montgomery - far right-top
+                                    { x: 450, y: 330 },     // Tomball - far right-bottom
+                                    { x: 330, y: 460 },     // Galveston - bottom-right, far
+                                ];
+
+                                // Scale positions for smaller screens (proportional to container size)
+                                // Desktop: 550px, Tablet: 450px (0.818x), Mobile: 350px (0.636x)
+                                const positions = desktopPositions;
+
+                                const pos = positions[index] || { x: 275, y: 275 };
+
+                                // Subtle floating animation
+                                const delay = index * 0.05;
+                                const duration = 3 + (index % 4) * 0.5;
+                                const floatX = (index % 3 - 1) * 6;
+                                const floatY = (Math.floor(index / 3) % 3 - 1) * 6;
+
+                                return (
+                                    <motion.div
+                                        key={city}
+                                        initial={{ opacity: 0, scale: 0.5 }}
+                                        animate={{
+                                            opacity: 1,
+                                            scale: 1,
+                                            x: [0, floatX, 0],
+                                            y: [0, floatY, 0],
+                                        }}
+                                        transition={{
+                                            opacity: { duration: 0.5, delay },
+                                            scale: { duration: 0.5, delay },
+                                            x: { duration, repeat: Infinity, ease: "easeInOut", delay },
+                                            y: { duration, repeat: Infinity, ease: "easeInOut", delay }
+                                        }}
+                                        whileHover={{
+                                            scale: 1.15,
+                                            zIndex: 50,
+                                            transition: { duration: 0.2 }
+                                        }}
+                                        className="absolute cursor-pointer"
+                                        style={{
+                                            left: `${(pos.x / 550) * 100}%`,
+                                            top: `${(pos.y / 550) * 100}%`,
+                                            transform: 'translate(-50%, -50%)'
+                                        }}
+                                    >
+                                        <div className="relative group">
+                                            {/* Glow effect on hover */}
+                                            <div className="absolute inset-0 bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300 rounded-full" />
+
+                                            {/* City Card */}
+                                            <div className="relative bg-gradient-to-br from-white via-white to-gray-50 px-2.5 py-1.5 md:px-3.5 md:py-2 rounded-full shadow-lg border-2 border-gray-200 group-hover:border-brand-cyan group-hover:shadow-2xl transition-all duration-300">
+                                                <div className="flex items-center space-x-1 md:space-x-1.5">
+                                                    {/* Location pin icon */}
+                                                    <svg
+                                                        className="w-2.5 h-2.5 md:w-3.5 md:h-3.5 text-brand-orange group-hover:text-brand-cyan transition-colors flex-shrink-0"
+                                                        fill="currentColor"
+                                                        viewBox="0 0 20 20"
+                                                    >
+                                                        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                                                    </svg>
+
+                                                    {/* City name with gradient on hover */}
+                                                    <span className="text-[10px] md:text-xs font-semibold text-gray-800 group-hover:bg-gradient-to-r group-hover:from-brand-orange group-hover:via-brand-pink group-hover:to-brand-cyan group-hover:bg-clip-text group-hover:text-transparent transition-all whitespace-nowrap">
+                                                        {city}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                );
+                            })}
                         </div>
                     </motion.div>
                 </div>
