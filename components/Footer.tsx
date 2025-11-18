@@ -6,7 +6,7 @@ import { KeyRound, MapPin, Mail, Phone, Instagram, Facebook } from 'lucide-react
 
 export const Footer: React.FC = () => {
     return (
-        <footer className="relative bg-gray-800 py-12 overflow-hidden text-white">
+        <footer className="relative bg-[#0B143E] py-12 overflow-hidden text-white rounded-t-3xl">
             {/* Subtle decorative elements */}
             <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gradient-to-tr from-brand-orange/15 to-transparent rounded-full blur-3xl" />
             <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-to-bl from-brand-cyan/15 to-transparent rounded-full blur-3xl" />
@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
                     {/* Brand Column */}
                     <div>
                         <div className="flex items-center space-x-2 mb-3">
-                            <img src="/logo.png" alt="Apartment Key Logo" className="h-14" />
+                            <img src="/logo2.png" alt="Apartment Key Logo" className="h-14" />
                         </div>
                         <p className="text-sm text-gray-400">
                             Houston&apos;s Trusted Apartment Locators

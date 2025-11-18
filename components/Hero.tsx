@@ -133,9 +133,9 @@ export const Hero: React.FC = () => {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(255,255,255,0.8)_100%)]" />
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-16 lg:gap-20 xl:gap-32 items-center">
                     {/* Left Content */}
-                    <div className="text-center lg:text-left space-y-5">
+                    <div className="text-center lg:text-left space-y-5 lg:pr-8">
                         {/* Badge */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -152,7 +152,7 @@ export const Hero: React.FC = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="text-4xl sm:text-5xl lg:text-6xl text-gray-700 font-bold leading-tight tracking-tight"
+                            className="text-4xl sm:text-5xl lg:text-6xl text-[#0B143E] font-bold leading-tight tracking-tight"
                         >
                             Unlock Your Perfect Place with{' '}
                             <AuroraText
@@ -182,7 +182,7 @@ export const Hero: React.FC = () => {
                         >
                             <Link
                                 href="/get-started"
-                                className="group inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-brand-coral to-brand-coral hover:from-brand-coral/90 hover:to-brand-coral/90 text-white px-6 py-4 shadow-lg shadow-brand-coral/25 text-base sm:text-lg"
+                                className="group inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-brand-orange to-brand-orange hover:from-brand-orange/90 hover:to-brand-orange/90 text-white px-6 py-4 shadow-lg shadow-brand-orange/25 text-base sm:text-lg"
                             >
                                 Get Started
                                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -197,7 +197,7 @@ export const Hero: React.FC = () => {
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="flex justify-center items-center w-full"
                     >
-                        <div className="relative w-full max-w-[500px] h-[500px] perspective-1000">
+                        <div className="relative w-full max-w-[420px] h-[420px] perspective-1000">
                             {/* Ambient Background Glow */}
                             <motion.div
                                 animate={{
@@ -209,7 +209,7 @@ export const Hero: React.FC = () => {
                                     repeat: Infinity,
                                     ease: "linear"
                                 }}
-                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-gradient-to-br from-brand-orange/30 via-brand-pink/30 to-brand-cyan/30 blur-3xl rounded-full"
+                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] bg-gradient-to-br from-brand-orange/30 via-brand-pink/30 to-brand-cyan/30 blur-3xl rounded-full"
                             />
 
                             {/* Stacked Apartment Cards with 3D Effect */}
@@ -270,7 +270,7 @@ export const Hero: React.FC = () => {
                                             }}
                                         >
                                             {/* Glassmorphic Card */}
-                                            <div className="relative w-[260px] h-[340px] rounded-2xl overflow-hidden group">
+                                            <div className="relative w-[220px] h-[290px] rounded-2xl overflow-hidden group">
                                                 {/* Glass effect background */}
                                                 <div className="absolute inset-0 bg-white/90 backdrop-blur-xl border-2 border-white/50 shadow-2xl" />
 
@@ -278,9 +278,9 @@ export const Hero: React.FC = () => {
                                                 <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/10 via-brand-pink/10 to-brand-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                                                 {/* Card Content */}
-                                                <div className="relative h-full flex flex-col p-6">
+                                                <div className="relative h-full flex flex-col p-5">
                                                     {/* Image placeholder with gradient */}
-                                                    <div className="relative w-full h-36 rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-brand-orange via-brand-pink to-brand-cyan">
+                                                    <div className="relative w-full h-28 rounded-xl overflow-hidden mb-3 bg-gradient-to-br from-brand-orange via-brand-pink to-brand-cyan">
                                                         {/* Animated map pin icon */}
                                                         <div className="absolute inset-0 flex items-center justify-center">
                                                             <motion.svg
@@ -292,7 +292,7 @@ export const Hero: React.FC = () => {
                                                                     repeat: Infinity,
                                                                     ease: "easeInOut"
                                                                 }}
-                                                                className="w-20 h-20 text-white"
+                                                                className="w-16 h-16 text-white"
                                                                 fill="currentColor"
                                                                 viewBox="0 0 24 24"
                                                             >
@@ -317,7 +317,7 @@ export const Hero: React.FC = () => {
                                                     </div>
 
                                                     {/* City Name */}
-                                                    <h3 className="text-2xl font-bold text-gray-800 mb-2 group-hover:bg-gradient-to-r group-hover:from-brand-orange group-hover:via-brand-pink group-hover:to-brand-cyan group-hover:bg-clip-text group-hover:text-transparent transition-all">
+                                                    <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:bg-gradient-to-r group-hover:from-brand-orange group-hover:via-brand-pink group-hover:to-brand-cyan group-hover:bg-clip-text group-hover:text-transparent transition-all">
                                                         {city}
                                                     </h3>
 
@@ -333,11 +333,22 @@ export const Hero: React.FC = () => {
                                                     <div className="space-y-2 mt-auto">
                                                         <div className="flex items-center justify-between text-sm">
                                                             <span className="text-gray-600">Available Units</span>
-                                                            <span className="font-semibold text-gray-800">{Math.floor(Math.random() * 50 + 10)}+</span>
+                                                            <span className="font-semibold text-gray-800">
+                                                                {city === 'Houston' ? '300+' : `${Math.floor(Math.random() * 100 + 20)}+`}
+                                                            </span>
                                                         </div>
                                                         <div className="flex items-center justify-between text-sm">
                                                             <span className="text-gray-600">Avg. Price</span>
-                                                            <span className="font-semibold text-gray-800">${Math.floor(Math.random() * 500 + 800)}</span>
+                                                            <span className="font-semibold text-gray-800">
+                                                                ${city === 'Houston' ? '1488' :
+                                                                    city === 'Cypress' ? '1148' :
+                                                                        city === 'Sugarland' ? '1292' :
+                                                                            city === 'Conroe' ? '981' :
+                                                                                city === 'Montgomery' ? '954' :
+                                                                                    city === 'Med Center' ? '1579' :
+                                                                                        city === 'Downtown' ? '1501' :
+                                                                                            Math.floor(Math.random() * 500 + 800)}
+                                                            </span>
                                                         </div>
                                                     </div>
                                                 </div>

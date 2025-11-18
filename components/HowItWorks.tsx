@@ -106,7 +106,7 @@ export const HowItWorks: React.FC = () => {
                 >
                     <Link
                         href="/get-started"
-                        className="inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-brand-coral to-brand-coral hover:from-brand-coral/90 hover:to-brand-coral/90 text-white px-8 py-4 group shadow-lg shadow-brand-coral/25"
+                        className="inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-brand-orange to-brand-orange hover:from-brand-orange/90 hover:to-brand-orange/90 text-white px-8 py-4 group shadow-lg shadow-brand-orange/25"
                     >
                         Get Started
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

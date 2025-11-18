@@ -43,7 +43,7 @@ export const Header: React.FC = () => {
                         className="flex items-center space-x-2 cursor-pointer"
                         onClick={() => scrollToSection('hero')}
                     >
-                        <img src="/logo.png" alt="Apartment Key" className="h-16" />
+                        <img src="/logo2.png" alt="Apartment Key" className="h-16" />
                     </motion.div>
 
                     {/* Desktop Navigation */}
@@ -69,7 +69,7 @@ export const Header: React.FC = () => {
                         </button>
                         <Link
                             href="/get-started"
-                            className="inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-brand-coral to-brand-coral hover:from-brand-coral/90 hover:to-brand-coral/90 text-white text-sm px-5 py-2 shadow-md shadow-brand-coral/20"
+                            className="inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-brand-orange to-brand-orange hover:from-brand-orange/90 hover:to-brand-orange/90 text-white text-sm px-5 py-2 shadow-md shadow-brand-orange/20"
                         >
                             Get Started
                         </Link>
@@ -114,7 +114,7 @@ export const Header: React.FC = () => {
                             </button>
                             <Link
                                 href="/get-started"
-                                className="w-full inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-brand-coral to-brand-coral hover:from-brand-coral/90 hover:to-brand-coral/90 text-white text-sm px-5 py-2 shadow-md shadow-brand-coral/20"
+                                className="w-full inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-brand-orange to-brand-orange hover:from-brand-orange/90 hover:to-brand-orange/90 text-white text-sm px-5 py-2 shadow-md shadow-brand-orange/20"
                             >
                                 Get Started
                             </Link>

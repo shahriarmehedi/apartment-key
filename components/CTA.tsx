@@ -57,7 +57,7 @@ export const CTA: React.FC = () => {
                     {/* <div className="p-5 rounded-3xl bg-gray-50 border border-gray-100">
                         <KeyRound className="w-12 h-12 text-brand-coral" strokeWidth={1.5} />
                     </div> */}
-                    <img src="/logo.png" alt="Key Icon" className=" h-16" />
+                    <img src="/logo2.png" alt="Key Icon" className=" h-16" />
                 </motion.div>
 
                 {/* Title */}
@@ -111,7 +111,7 @@ export const CTA: React.FC = () => {
                     {/* Use a styled Link (anchor) instead of nesting a <button> inside an <a> */}
                     <Link
                         href="/get-started"
-                        className="inline-flex items-center justify-center bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan hover:from-brand-orange/90 hover:via-brand-pink/90 hover:to-brand-cyan/90 text-white px-10 py-6 group text-lg font-semibold shadow-2xl shadow-brand-orange/20 rounded-2xl"
+                        className="inline-flex items-center justify-center bg-gradient-to-r from-brand-orange to-brand-orange hover:from-brand-orange/90 hover:to-brand-orange/90 text-white px-10 py-6 group text-lg font-semibold shadow-2xl shadow-brand-orange/20 rounded-2xl"
                     >
                         Get Started
                         <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
