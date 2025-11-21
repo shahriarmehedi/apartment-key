@@ -132,7 +132,7 @@ export const Hero: React.FC = () => {
             {/* Radial gradient overlay for vignette effect */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(255,255,255,0.8)_100%)]" />
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="relative z-10 max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-16 lg:gap-20 xl:gap-32 items-center">
                     {/* Left Content */}
                     <div className="text-center lg:text-left space-y-5 lg:pr-8">
@@ -280,7 +280,7 @@ export const Hero: React.FC = () => {
                                                 {/* Card Content */}
                                                 <div className="relative h-full flex flex-col p-5">
                                                     {/* Image placeholder with gradient */}
-                                                    <div className="relative w-full h-28 rounded-xl overflow-hidden mb-3 bg-gradient-to-br from-brand-orange via-brand-pink to-brand-cyan">
+                                                    <div className="relative w-full h-28 rounded-xl overflow-hidden mb-3 bg-gradient-to-br from-[#0A133D] to-brand-cyan">
                                                         {/* Animated map pin icon */}
                                                         <div className="absolute inset-0 flex items-center justify-center">
                                                             <motion.svg

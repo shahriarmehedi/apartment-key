@@ -98,8 +98,8 @@ const ReviewCard = ({
 
 export const Reviews: React.FC = () => {
     return (
-        <section id="reviews" className="py-24 relative overflow-hidden bg-white">
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="reviews" className="pt-14 relative overflow-hidden bg-white">
+            <div className="relative z-10 max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Dark background container with rounded corners and whitespace */}
                 <div className="bg-[#0B143E] rounded-3xl p-8 sm:p-12 lg:p-16 relative overflow-hidden">
                     {/* Decorative background elements inside dark container */}

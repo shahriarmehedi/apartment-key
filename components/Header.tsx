@@ -35,7 +35,7 @@ export const Header: React.FC = () => {
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-lg border-b border-gray-200' : 'bg-transparent'
                 }`}
         >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <motion.div
@@ -43,7 +43,7 @@ export const Header: React.FC = () => {
                         className="flex items-center space-x-2 cursor-pointer"
                         onClick={() => scrollToSection('hero')}
                     >
-                        <img src="/logo2.png" alt="Apartment Key" className="h-16" />
+                        <img src="/Final-07.png" alt="Apartment Key" className="h-16" />
                     </motion.div>
 
                     {/* Desktop Navigation */}

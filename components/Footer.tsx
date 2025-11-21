@@ -6,40 +6,40 @@ import { KeyRound, MapPin, Mail, Phone, Instagram, Facebook } from 'lucide-react
 
 export const Footer: React.FC = () => {
     return (
-        <footer className="relative bg-[#0B143E] py-12 overflow-hidden text-white rounded-t-3xl">
+        <footer className="relative bg-white py-12 overflow-hidden rounded-t-3xl border-t border-gray-200">
             {/* Subtle decorative elements */}
-            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gradient-to-tr from-brand-orange/15 to-transparent rounded-full blur-3xl" />
-            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-to-bl from-brand-cyan/15 to-transparent rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gradient-to-tr from-brand-orange/10 to-transparent rounded-full blur-3xl" />
+            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-to-bl from-brand-cyan/10 to-transparent rounded-full blur-3xl" />
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative z-10 max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                     {/* Brand Column */}
                     <div>
                         <div className="flex items-center space-x-2 mb-3">
-                            <img src="/logo2.png" alt="Apartment Key Logo" className="h-14" />
+                            <img src="/Final-07.png" alt="Apartment Key Logo" className="h-14" />
                         </div>
-                        <p className="text-sm text-gray-400">
+                        <p className="text-sm text-gray-600">
                             Houston&apos;s Trusted Apartment Locators
                         </p>
                     </div>
 
                     {/* Contact Column */}
                     <div>
-                        <h3 className="text-sm font-semibold mb-3">Contact Us</h3>
+                        <h3 className="text-sm font-semibold mb-3 text-gray-900">Contact Us</h3>
                         <div className="space-y-2 text-sm">
                             <div className="flex items-start space-x-2">
                                 <MapPin className="w-4 h-4 text-brand-cyan flex-shrink-0 mt-0.5" />
-                                <span className="text-gray-400">Serving Greater Houston</span>
+                                <span className="text-gray-600">Serving Greater Houston</span>
                             </div>
                             <div className="flex items-start space-x-2">
                                 <Mail className="w-4 h-4 text-brand-cyan flex-shrink-0 mt-0.5" />
-                                <a href="mailto:admin@apartmentkey.com" className="text-gray-400 hover:text-brand-orange transition-colors">
+                                <a href="mailto:admin@apartmentkey.com" className="text-gray-600 hover:text-brand-orange transition-colors">
                                     admin@apartmentkey.com
                                 </a>
                             </div>
                             <div className="flex items-start space-x-2">
                                 <Phone className="w-4 h-4 text-brand-cyan flex-shrink-0 mt-0.5" />
-                                <a href="tel:8324238383" className="text-gray-400 hover:text-brand-orange transition-colors">
+                                <a href="tel:8324238383" className="text-gray-600 hover:text-brand-orange transition-colors">
                                     832.423.8383
                                 </a>
                             </div>
@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
 
                     {/* Social Column */}
                     <div>
-                        <h3 className="text-sm font-semibold mb-3">Follow Us</h3>
+                        <h3 className="text-sm font-semibold mb-3 text-gray-900">Follow Us</h3>
                         <div className="flex space-x-3">
                             <a
                                 href="#"
@@ -78,14 +78,14 @@ export const Footer: React.FC = () => {
                 </div>
 
                 <div className='pb-7 pt-10'>
-                    <a href="/60c80b392b87423009aa83fb_TREC Consumer Protection Notice.pdf" target='_blank' className="inline-flex items-center space-x-2 text-sm text-gray-400 hover:text-brand-orange transition-colors">
-                        <span className='text-sky-400'>Texas Real Estate Commission Consumer Protection Notice</span>
+                    <a href="/60c80b392b87423009aa83fb_TREC Consumer Protection Notice.pdf" target='_blank' className="inline-flex items-center space-x-2 text-sm text-gray-600 hover:text-brand-orange transition-colors">
+                        <span className='text-sky-500'>Texas Real Estate Commission Consumer Protection Notice</span>
                     </a>
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-gray-600 pt-6 text-center">
-                    <p className="text-xs text-gray-400">&copy; {new Date().getFullYear()} <span className='text-brand-coral'>Apartment Key</span>. All rights reserved.</p>
+                <div className="border-t border-gray-200 pt-6 text-center">
+                    <p className="text-xs text-gray-600">&copy; {new Date().getFullYear()} <span className='text-brand-orange'>Apartment Key</span>. All rights reserved.</p>
                 </div>
             </div>
         </footer>

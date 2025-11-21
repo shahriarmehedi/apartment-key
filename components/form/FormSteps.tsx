@@ -243,7 +243,7 @@ export function MultiSelectionGroupedStep({ config }: StepProps) {
     };
 
     return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1480px] mx-auto">
             {/* Mobile: Stacked cards */}
             <div className="md:hidden space-y-6">
                 {config.groups.map((group: any) => (

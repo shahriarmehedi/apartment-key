@@ -10,7 +10,7 @@ export const TrustIndicators: React.FC = () => {
             <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-gradient-to-tr from-brand-orange/15 to-transparent rounded-full blur-3xl" />
             <div className="absolute top-0 right-1/4 w-[300px] h-[300px] bg-gradient-to-bl from-brand-cyan/15 to-transparent rounded-full blur-3xl" />
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative z-10 max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Trust Indicators */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

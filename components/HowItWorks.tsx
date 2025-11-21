@@ -37,81 +37,83 @@ export const HowItWorks: React.FC = () => {
     }
 
     return (
-        <section id="how-it-works" className="py-24 relative overflow-hidden">
-            {/* Enhanced Background */}
-            <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-white to-gray-50" />
+        <section id="how-it-works" className="pt-14 relative overflow-hidden bg-white">
+            <div className="relative z-10 max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Dark background container with rounded corners and whitespace */}
+                <div className="bg-[#0B143E] rounded-3xl p-8 sm:p-12 lg:p-16 relative overflow-hidden">
+                    {/* Decorative elements inside dark container */}
+                    <div className="absolute top-1/4 right-0 w-[300px] h-[300px] bg-gradient-to-l from-brand-cyan/20 to-transparent rounded-full blur-3xl" />
+                    <div className="absolute bottom-1/4 left-0 w-[300px] h-[300px] bg-gradient-to-r from-brand-orange/20 to-transparent rounded-full blur-3xl" />
 
-            {/* Subtle decorative elements */}
-            <div className="absolute top-1/4 right-0 w-[300px] h-[300px] bg-gradient-to-l from-brand-cyan/15 to-transparent rounded-full blur-3xl" />
-            <div className="absolute bottom-1/4 left-0 w-[300px] h-[300px] bg-gradient-to-r from-brand-orange/15 to-transparent rounded-full blur-3xl" />
-
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Section Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
-                >
-                    <h2 className="text-3xl sm:text-4xl font-bold text-brand-coral mb-4">
-                        How It Works
-                    </h2>
-                    <p className="text-lg text-gray-600">
-                        Three simple steps to your next ... <span className="text-brand-orange">Apartment Key</span>
-                    </p>
-                </motion.div>
-
-                {/* Steps */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                    {steps.map((step, index) => (
+                    <div className="relative z-10">
+                        {/* Section Header */}
                         <motion.div
-                            key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            whileHover={{ scale: 1.05 }}
-                            className="relative bg-gradient-to-br from-brand-orange/5 via-brand-pink/5 to-brand-cyan/5 rounded-3xl p-6 sm:p-8 h-full hover:shadow-2xl transition-all group overflow-hidden border-2 border-gray-200 hover:border-brand-orange"
+                            transition={{ duration: 0.6 }}
+                            className="text-center mb-16"
                         >
-                            <div className="relative flex flex-col items-center text-center space-y-4">
-                                {/* Step Number & Icon */}
-                                <div className="flex flex-col items-center space-y-3">
-                                    <span className="text-xs font-bold tracking-wider bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan bg-clip-text text-transparent">
-                                        STEP {step.number}
-                                    </span>
-                                    <div className="relative p-5 rounded-2xl bg-gradient-to-br from-brand-orange/15 via-brand-pink/10 to-brand-cyan/15 group-hover:from-brand-orange group-hover:via-brand-pink group-hover:to-brand-cyan transition-all duration-300">
-                                        <step.icon className="w-8 h-8 text-brand-orange group-hover:text-white transition-colors" strokeWidth={2} />
-                                    </div>
-                                </div>
-
-                                <h3 className="text-lg sm:text-xl font-bold text-gray-900">
-                                    {step.title}
-                                </h3>
-                                <p className="text-sm text-gray-600 leading-relaxed">
-                                    {step.description}
-                                </p>
-                            </div>
+                            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                                How It Works
+                            </h2>
+                            <p className="text-lg text-gray-300">
+                                Three simple steps to your next ... <span className="text-brand-orange">Apartment Key</span>
+                            </p>
                         </motion.div>
-                    ))}
-                </div>
 
-                {/* CTA */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                    className="text-center"
-                >
-                    <Link
-                        href="/get-started"
-                        className="inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-brand-orange to-brand-orange hover:from-brand-orange/90 hover:to-brand-orange/90 text-white px-8 py-4 group shadow-lg shadow-brand-orange/25"
-                    >
-                        Get Started
-                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                </motion.div>
+                        {/* Steps */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                            {steps.map((step, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    whileHover={{ scale: 1.05 }}
+                                    className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-6 sm:p-8 h-full hover:shadow-2xl transition-all group overflow-hidden border-2 border-white/20 hover:border-brand-orange hover:bg-white/15"
+                                >
+                                    <div className="relative flex flex-col items-center text-center space-y-4">
+                                        {/* Step Number & Icon */}
+                                        <div className="flex flex-col items-center space-y-3">
+                                            <span className="text-xs font-bold tracking-wider bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan bg-clip-text text-transparent">
+                                                STEP {step.number}
+                                            </span>
+                                            <div className="relative p-5 rounded-2xl bg-white/10 backdrop-blur-sm group-hover:bg-gradient-to-br group-hover:from-brand-orange group-hover:via-brand-pink group-hover:to-brand-cyan transition-all duration-300">
+                                                <step.icon className="w-8 h-8 text-brand-orange group-hover:text-white transition-colors" strokeWidth={2} />
+                                            </div>
+                                        </div>
+
+                                        <h3 className="text-lg sm:text-xl font-bold text-white">
+                                            {step.title}
+                                        </h3>
+                                        <p className="text-sm text-gray-300 leading-relaxed">
+                                            {step.description}
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        {/* CTA */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                            className="text-center"
+                        >
+                            <Link
+                                href="/get-started"
+                                className="inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 relative overflow-hidden bg-gradient-to-r from-brand-orange to-brand-orange hover:from-brand-orange/90 hover:to-brand-orange/90 text-white px-8 py-4 group shadow-lg shadow-brand-orange/25"
+                            >
+                                Get Started
+                                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                        </motion.div>
+                    </div>
+                </div>
             </div>
         </section>
     )
