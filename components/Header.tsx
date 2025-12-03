@@ -43,7 +43,7 @@ export const Header: React.FC = () => {
                         className="flex items-center space-x-2 cursor-pointer"
                         onClick={() => scrollToSection('hero')}
                     >
-                        <img src="/Final-07.png" alt="Apartment Key" className="h-16" />
+                        <img src="/Final-07.png" alt="Apartment Key" className="h-20" />
                     </motion.div>
 
                     {/* Desktop Navigation */}

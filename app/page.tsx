@@ -19,9 +19,9 @@ export default function Home() {
             <div className="relative z-10">
                 <Header />
                 <Hero />
-                <Reviews />
                 <HowItWorks />
                 <FreeService />
+                <Reviews />
                 <NeighborhoodsNew />
                 <CTA />
                 {/* <TrustIndicators /> */}

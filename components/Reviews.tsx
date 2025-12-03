@@ -102,9 +102,6 @@ export const Reviews: React.FC = () => {
             <div className="relative z-10 max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Dark background container with rounded corners and whitespace */}
                 <div className="bg-[#0B143E] rounded-3xl p-8 sm:p-12 lg:p-16 relative overflow-hidden">
-                    {/* Decorative background elements inside dark container */}
-                    <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-gradient-to-br from-brand-orange/20 to-transparent rounded-full blur-3xl" />
-                    <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-gradient-to-tl from-brand-cyan/20 to-transparent rounded-full blur-3xl" />
 
                     <div className="relative z-10">
                         {/* Section Header */}

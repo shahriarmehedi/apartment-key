@@ -280,7 +280,7 @@ export const Hero: React.FC = () => {
                                                 {/* Card Content */}
                                                 <div className="relative h-full flex flex-col p-5">
                                                     {/* Image placeholder with gradient */}
-                                                    <div className="relative w-full h-28 rounded-xl overflow-hidden mb-3 bg-gradient-to-br from-[#0A133D] to-brand-cyan">
+                                                    <div className="relative w-full h-28 rounded-xl overflow-hidden mb-3 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900">
                                                         {/* Animated map pin icon */}
                                                         <div className="absolute inset-0 flex items-center justify-center">
                                                             <motion.svg
@@ -378,22 +378,6 @@ export const Hero: React.FC = () => {
                                 ))}
                             </div>
 
-                            {/* Floating Info Badge */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 1, duration: 0.6 }}
-                                className="absolute top-8 left-1/2 -translate-x-1/2 z-50"
-                            >
-                                <div className="flex items-center space-x-2 bg-white/80 backdrop-blur-lg px-4 py-2 rounded-full shadow-xl border border-white/50">
-                                    <div className="flex -space-x-2">
-                                        {[1, 2, 3].map((i) => (
-                                            <div key={i} className="w-6 h-6 rounded-full bg-gradient-to-br from-brand-orange to-brand-pink border-2 border-white" />
-                                        ))}
-                                    </div>
-                                    <span className="text-sm font-semibold text-gray-700">1,500+ Happy Renters</span>
-                                </div>
-                            </motion.div>
                         </div>
                     </motion.div>
                 </div>
