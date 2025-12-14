@@ -41,9 +41,6 @@ export const CTA: React.FC = () => {
                     className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-gradient-to-tl from-brand-cyan/30 to-transparent rounded-full blur-3xl"
                 />
 
-                {/* Minimal accent line */}
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan rounded-b-full" />
-
                 <div className="relative z-10 max-w-4xl mx-auto text-center">
                     {/* Icon */}
                     <motion.div
@@ -56,7 +53,7 @@ export const CTA: React.FC = () => {
                         {/* <div className="p-5 rounded-3xl bg-gray-50 border border-gray-100">
                         <KeyRound className="w-12 h-12 text-brand-coral" strokeWidth={1.5} />
                     </div> */}
-                        <img src="/Final-07.png" alt="Key Icon" className=" h-16" />
+                        <img src="/Final-07.png" alt="Key Icon" className=" h-24" />
                     </motion.div>
 
                     {/* Title */}

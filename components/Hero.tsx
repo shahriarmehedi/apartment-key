@@ -152,9 +152,12 @@ export const Hero: React.FC = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="text-4xl sm:text-5xl lg:text-6xl text-[#0B143E] font-bold leading-tight tracking-tight"
+                            className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight"
                         >
-                            Unlock Your Perfect Place with{' '}
+                            <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 bg-clip-text text-transparent">
+                                Unlock Your Perfect Place
+                            </span>
+                            {' '} <span className='text-gray-600'>with</span> {' '}
                             <AuroraText
                                 className="text-4xl sm:text-5xl lg:text-6xl font-bold"
                                 colors={["#00D4FF", "#FFB6D9", "#00D4FF"]}
@@ -280,7 +283,7 @@ export const Hero: React.FC = () => {
                                                 {/* Card Content */}
                                                 <div className="relative h-full flex flex-col p-5">
                                                     {/* Image placeholder with gradient */}
-                                                    <div className="relative w-full h-28 rounded-xl overflow-hidden mb-3 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900">
+                                                    <div className="relative w-full h-28 rounded-xl overflow-hidden mb-3 bg-gradient-to-br from-brand-orange via-brand-pink to-brand-cyan">
                                                         {/* Animated map pin icon */}
                                                         <div className="absolute inset-0 flex items-center justify-center">
                                                             <motion.svg

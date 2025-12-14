@@ -69,8 +69,8 @@ export const NeighborhoodsNew: React.FC = () => {
                                         className="flex items-start space-x-3 bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-sm hover:shadow-lg hover:bg-white/15 transition-all cursor-pointer border border-white/10"
                                     >
                                         <div className="flex-shrink-0">
-                                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange via-brand-pink to-brand-cyan flex items-center justify-center shadow-md">
-                                                <Check className="w-5 h-5 text-white" strokeWidth={2.5} />
+                                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-700 via-orange-600 to-orange-500 flex items-center justify-center shadow-md">
+                                                <Check className="w-5 h-5 text-white" strokeWidth={3} />
                                             </div>
                                         </div>
                                         <div className="flex-1 min-w-0">
