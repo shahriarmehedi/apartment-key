@@ -141,7 +141,7 @@ export const Hero: React.FC = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="inline-flex items-center space-x-2 bg-gradient-to-r from-brand-orange/15 to-brand-cyan/15 border border-brand-cyan/30 rounded-full px-4 py-1.5 text-sm text-gray-700 font-medium"
+                            className="inline-flex items-center space-x-2 bg-gradient-to-r from-brand-orange/15 to-brand-cyan/25 border border-brand-cyan/40 rounded-full px-4 py-1.5 text-sm text-gray-700 font-medium shadow-sm shadow-brand-cyan/10"
                         >
                             <span>✨</span>
                             <span>Houston&apos;s Most Trusted Apartment Locators</span>
@@ -212,7 +212,7 @@ export const Hero: React.FC = () => {
                                     repeat: Infinity,
                                     ease: "linear"
                                 }}
-                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] bg-gradient-to-br from-brand-orange/30 via-brand-pink/30 to-brand-cyan/30 blur-3xl rounded-full"
+                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] bg-gradient-to-br from-brand-orange/25 via-brand-cyan/35 to-brand-pink/25 blur-3xl rounded-full"
                             />
 
                             {/* Stacked Apartment Cards with 3D Effect */}
@@ -274,18 +274,23 @@ export const Hero: React.FC = () => {
                                         >
                                             {/* Glassmorphic Card */}
                                             <div className="relative w-[220px] h-[290px] rounded-2xl overflow-hidden group">
-                                                {/* Glass effect background */}
-                                                <div className="absolute inset-0 bg-white/90 backdrop-blur-xl border-2 border-white/50 shadow-2xl" />
+                                                {/* Solid white background for readability */}
+                                                <div className="absolute inset-0 bg-white backdrop-blur-xl border-2 border-brand-cyan/40 shadow-xl shadow-brand-cyan/15" />
 
-                                                {/* Gradient overlay */}
-                                                <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/10 via-brand-pink/10 to-brand-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                                {/* Subtle blue tint overlay */}
+                                                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-brand-cyan/5 to-brand-cyan/10" />
+
+                                                {/* Gradient overlay on hover */}
+                                                <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/10 via-brand-cyan/15 to-brand-pink/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                                                 {/* Card Content */}
                                                 <div className="relative h-full flex flex-col p-5">
                                                     {/* Image placeholder with gradient */}
                                                     <div className="relative w-full h-28 rounded-xl overflow-hidden mb-3 bg-gradient-to-br from-brand-orange via-brand-pink to-brand-cyan">
+                                                        {/* Subtle blue overlay for accent */}
+                                                        <div className="absolute inset-0 bg-gradient-to-br from-transparent to-brand-cyan/20 mix-blend-overlay" />
                                                         {/* Animated map pin icon */}
-                                                        <div className="absolute inset-0 flex items-center justify-center">
+                                                        <div className="absolute inset-0 flex items-center justify-center z-10">
                                                             <motion.svg
                                                                 animate={{
                                                                     y: [0, -8, 0],
@@ -320,13 +325,13 @@ export const Hero: React.FC = () => {
                                                     </div>
 
                                                     {/* City Name */}
-                                                    <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:bg-gradient-to-r group-hover:from-brand-orange group-hover:via-brand-pink group-hover:to-brand-cyan group-hover:bg-clip-text group-hover:text-transparent transition-all">
+                                                    <h3 className="text-xl font-bold bg-gradient-to-r from-gray-800 via-brand-cyan/80 to-gray-800 bg-clip-text text-transparent mb-2 group-hover:from-brand-orange group-hover:via-brand-pink group-hover:to-brand-cyan transition-all">
                                                         {city}
                                                     </h3>
 
                                                     {/* Stats */}
                                                     <div className="flex items-center space-x-2 mb-3">
-                                                        <svg className="w-4 h-4 text-brand-orange" fill="currentColor" viewBox="0 0 20 20">
+                                                        <svg className="w-4 h-4 text-brand-cyan" fill="currentColor" viewBox="0 0 20 20">
                                                             <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                                                         </svg>
                                                         <span className="text-sm text-gray-600">Houston Area</span>
@@ -356,8 +361,8 @@ export const Hero: React.FC = () => {
                                                     </div>
                                                 </div>
 
-                                                {/* Corner accent */}
-                                                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-brand-cyan/20 to-transparent rounded-bl-3xl" />
+                                                {/* Corner accent - enhanced blue */}
+                                                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-brand-cyan/30 to-transparent rounded-bl-3xl" />
                                             </div>
                                         </motion.div>
                                     );
@@ -374,8 +379,8 @@ export const Hero: React.FC = () => {
                                         transition={{ delay: index * 0.02 }}
                                         onClick={() => setCurrentIndex(index)}
                                         className={`rounded-full transition-all duration-300 cursor-pointer ${index === currentIndex
-                                            ? 'bg-brand-orange w-6 h-2'
-                                            : 'bg-gray-400 w-2 h-2 hover:bg-gray-600'
+                                            ? 'bg-gradient-to-r from-brand-orange to-brand-cyan w-6 h-2 shadow-sm shadow-brand-cyan/30'
+                                            : 'bg-gray-400 w-2 h-2 hover:bg-brand-cyan/60'
                                             }`}
                                     />
                                 ))}
