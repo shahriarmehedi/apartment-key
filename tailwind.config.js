@@ -14,6 +14,7 @@ module.exports = {
                     cyan: '#00D4FF',       // Bright cyan/blue from logo
                     pink: '#FFB6D9',       // Soft pink accent from logo
                     coral: '#FF8C42',      // Alias for orange
+                    'deep-blue': '#0B143E', // Deep navy blue from sections
                 },
                 primary: {
                     '50': '#f0f9ff',
