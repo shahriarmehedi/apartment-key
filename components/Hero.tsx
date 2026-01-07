@@ -152,18 +152,20 @@ export const Hero: React.FC = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight"
+                            className="font-bold leading-tight tracking-tight flex flex-col items-center lg:items-start"
                         >
-                            <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 bg-clip-text text-transparent">
-                                Unlock Your Perfect Place
-                            </span>
-                            {' '} <span className='text-gray-600'>with</span> {' '}
                             <AuroraText
                                 className="text-4xl sm:text-5xl lg:text-6xl font-bold"
                                 colors={["#00D4FF", "#FFB6D9", "#00D4FF"]}
                             >
-                                APARTMENT KEY
+                                Unlock
                             </AuroraText>
+                            <span className="text-brand-deep-blue text-2xl sm:text-3xl lg:text-4xl my-1">
+                                your perfect place with...
+                            </span>
+                            <span className="text-4xl sm:text-5xl lg:text-6xl bg-gradient-to-r from-brand-orange via-orange-400 to-brand-orange bg-clip-text text-transparent">
+                                APARTMENT KEY
+                            </span>
                         </motion.h1>
 
                         {/* Subtext */}
@@ -274,8 +276,8 @@ export const Hero: React.FC = () => {
                                         >
                                             {/* Glassmorphic Card */}
                                             <div className="relative w-[220px] h-[290px] rounded-2xl overflow-hidden group border-[3px] border-brand-deep-blue shadow-xl shadow-brand-deep-blue/20">
-                                                {/* Bright white background for readability */}
-                                                <div className="absolute inset-0 bg-white/95 backdrop-blur-xl rounded-2xl" />
+                                                {/* Glass effect background */}
+                                                <div className="absolute inset-0 bg-white/90 backdrop-blur-xl rounded-2xl" />
 
                                                 {/* Gradient overlay on hover */}
                                                 <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/10 via-brand-pink/10 to-brand-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
