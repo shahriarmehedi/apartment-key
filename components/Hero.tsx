@@ -147,19 +147,16 @@ export const Hero: React.FC = () => {
                             <span>Houston&apos;s Most Trusted Apartment Locators</span>
                         </motion.div>
 
-                        {/* Main Headline with Aurora Text */}
+                        {/* Main Headline */}
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             className="font-bold leading-tight tracking-tight flex flex-col items-center lg:items-start"
                         >
-                            <AuroraText
-                                className="text-4xl sm:text-5xl lg:text-6xl font-bold"
-                                colors={["#00D4FF", "#FFB6D9", "#00D4FF"]}
-                            >
+                            <span className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-brand-orange via-brand-pink to-brand-cyan bg-clip-text text-transparent">
                                 Unlock
-                            </AuroraText>
+                            </span>
                             <span className="text-brand-deep-blue text-2xl sm:text-3xl lg:text-4xl my-1">
                                 your perfect place with...
                             </span>
