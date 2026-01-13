@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { FormProvider } from '@/contexts/FormContext';
 import { FormContainer } from '@/components/form/FormContainer';
 import {
@@ -18,6 +19,7 @@ import formConfig from '@/data/form-config.json';
 import { useForm } from '@/contexts/FormContext';
 
 function FormContent() {
+    const router = useRouter();
     const { currentStep, formData } = useForm();
     const stepConfig = formConfig.steps[currentStep];
 
@@ -38,6 +40,9 @@ function FormContent() {
             const result = await response.json();
             console.log('Form submitted successfully:', result);
             alert('Thank you! Your information has been submitted. We will contact you soon!');
+
+            // Redirect to homepage
+            router.push('/');
         } catch (error) {
             console.error('Error submitting form:', error);
             alert('There was an error submitting your form. Please try again or contact us directly.');
