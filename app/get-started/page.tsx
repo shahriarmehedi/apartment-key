@@ -21,10 +21,27 @@ function FormContent() {
     const { currentStep, formData } = useForm();
     const stepConfig = formConfig.steps[currentStep];
 
-    const handleSubmit = () => {
-        console.log('Form submitted:', formData);
-        // TODO: Add your form submission logic here
-        alert('Thank you! Your information has been submitted. Check console for data.');
+    const handleSubmit = async () => {
+        try {
+            const response = await fetch('/api/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ formData }),
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to submit form');
+            }
+
+            const result = await response.json();
+            console.log('Form submitted successfully:', result);
+            alert('Thank you! Your information has been submitted. We will contact you soon!');
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('There was an error submitting your form. Please try again or contact us directly.');
+        }
     };
 
     const renderStep = () => {
