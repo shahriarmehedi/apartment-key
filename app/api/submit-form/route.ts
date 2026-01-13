@@ -22,29 +22,31 @@ export async function POST(request: Request) {
             <p><strong>Move-in Date:</strong> ${formData.moveInDate || 'N/A'}</p>
             <p><strong>Bedrooms:</strong> ${formData.bedrooms || 'N/A'}</p>
             <p><strong>Bathrooms:</strong> ${formData.bathrooms || 'N/A'}</p>
-            <p><strong>Budget:</strong> $${formData.budget || 'N/A'}</p>
-            <p><strong>Income:</strong> $${formData.income || 'N/A'}</p>
+            <p><strong>Budget:</strong> $${formData.maxBudget || 'N/A'}</p>
+            <p><strong>Monthly Income:</strong> $${formData.monthlyIncome || 'N/A'}</p>
             
             <h3>Location Preferences</h3>
-            <p><strong>Areas:</strong> ${Array.isArray(formData.areas) ? formData.areas.join(', ') : 'N/A'}</p>
-            <p><strong>Work Location:</strong> ${formData.workLocation || 'N/A'}</p>
+            <p><strong>Preferred Areas:</strong> ${Array.isArray(formData.location) ? formData.location.join(', ') : (formData.location || 'N/A')}</p>
+            
+            <h3>Rental History & Background</h3>
+            <p><strong>Rental History:</strong> ${Array.isArray(formData.rentalHistory) ? formData.rentalHistory.join(', ') : (formData.rentalHistory || 'N/A')}</p>
             
             <h3>Additional Preferences</h3>
             <p><strong>Pets:</strong> ${formData.pets || 'N/A'}</p>
-            <p><strong>Parking:</strong> ${formData.parking || 'N/A'}</p>
-            <p><strong>Lease Term:</strong> ${formData.leaseTerm || 'N/A'}</p>
-            <p><strong>Must-Have Amenities:</strong> ${Array.isArray(formData.amenities) ? formData.amenities.join(', ') : 'N/A'}</p>
             
-            <h3>Special Requests</h3>
-            <p>${formData.specialRequests || 'None'}</p>
+            <h3>Referral Information</h3>
+            <p><strong>How did they hear about us:</strong> ${formData.referralSource || 'N/A'}</p>
+            
+            <h3>Additional Information</h3>
+            <p>${formData.additionalInfo || 'None provided'}</p>
             
             <hr/>
             <p><small>Submitted on ${new Date().toLocaleString()}</small></p>
         `;
-            
+
         const { data, error } = await resend.emails.send({
             from: 'Apartment Key <noreply@apartmentkey.com>',
-            to: ['Info@apartmentkey.com'],
+            to: ['md.shahriar.mehedi@gmail.com'],
             subject: `New Form Submission from ${formData.firstName || ''} ${formData.lastName || ''}`,
             html: emailContent,
         });
