@@ -229,6 +229,7 @@ export function MultiSelectionSingleStep({ config }: StepProps) {
 export function MultiSelectionGroupedStep({ config }: StepProps) {
     const { formData, updateFormData } = useForm();
     const fieldValue = (formData[config.field as keyof typeof formData] as string[]) || [];
+    const maxLimit = config.maxLimit || 999;
 
     const handleToggle = (value: string) => {
         let updated = [...fieldValue];
@@ -236,6 +237,22 @@ export function MultiSelectionGroupedStep({ config }: StepProps) {
         if (updated.includes(value)) {
             updated = updated.filter(v => v !== value);
         } else {
+            // Check if max limit reached
+            if (updated.length >= maxLimit) {
+                const Swal = require('sweetalert2');
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Maximum Selection Reached',
+                    text: `You can select a maximum of ${maxLimit} locations`,
+                    confirmButtonColor: '#FF8C42',
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                });
+                return;
+            }
             updated = [...updated, value];
         }
 
@@ -244,6 +261,19 @@ export function MultiSelectionGroupedStep({ config }: StepProps) {
 
     return (
         <div className="max-w-[1480px] mx-auto">
+            {/* Info message about max selections */}
+            {config.maxLimit && (
+                <div className="mb-6 text-center">
+                    <p className="text-sm text-gray-600">
+                        You can select up to <span className="font-semibold text-brand-orange">{config.maxLimit} locations</span>
+                        {fieldValue.length > 0 && (
+                            <span className="ml-2 text-brand-cyan font-semibold">
+                                ({fieldValue.length}/{config.maxLimit} selected)
+                            </span>
+                        )}
+                    </p>
+                </div>
+            )}
             {/* Mobile: Stacked cards */}
             <div className="md:hidden space-y-6">
                 {config.groups.map((group: any) => (

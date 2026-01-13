@@ -138,6 +138,7 @@
       "field": "location",
       "required": true,
       "multiple": true,
+      "maxLimit": 3,
       "groups": [
         {
           "id": "central",
